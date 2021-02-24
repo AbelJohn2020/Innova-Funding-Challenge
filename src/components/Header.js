@@ -1,11 +1,12 @@
 import React from 'react';
+import { CgAlignBottom } from "react-icons/cg";
 
 const Header = (props) => {
     return (
         <header>
             <div>
                 {props.home} 
-                <span>ll</span>
+                <CgAlignBottom />
             </div>
             <button>YL</button>
         </header>
