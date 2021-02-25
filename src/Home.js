@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 // import Boards from './components/Boards';
 import Header from './components/Header';
 // import NewBoard from './components/NewBoard';
-// import { CgHomeAlt } from "react-icons/cg";
 import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList';
 import './styles/home.css';
@@ -17,8 +16,6 @@ const testList = [
 ];
 
 const Home = () => {
-    // const iconHome = <CgHomeAlt />;
-    // const goHome = <button>{iconHome}</button>;
 
     const [boardsList, setBoardsList] = useState(testList);
     const [newBoard, setNewBoard] = useState([{}]);
@@ -39,7 +36,6 @@ const Home = () => {
 
     return (
         <div>
-            {/* <Header home={goHome} /> */}
             <Header />
             <section>
                 <div    >

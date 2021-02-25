@@ -5,7 +5,7 @@ import '../styles/header.css';
 const Header = (props) => {
     return (
         <header>
-            <div>
+            <div className="go-home">
                 {props.home} 
                 <CgDetailsLess className="header-icon" />
             </div>
