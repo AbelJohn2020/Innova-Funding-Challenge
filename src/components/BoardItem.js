@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/boardItem.css';
 import userTwo from '../images/user-two.jpg';
 import userFour from '../images/user-four.jpg';
 import userseven from '../images/user-seven.jpg';
 import { VscChromeClose } from "react-icons/vsc";
+// import ToDoLists from './ToDoLists';
 
 const BoardItem = ({itemId, closeBoard}) => {
+    // const [goToPage, setGoToPage] = useState(false);
+
     return (
         <div className="board">
             {/* <input 

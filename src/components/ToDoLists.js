@@ -3,7 +3,7 @@ import { CgHomeAlt } from "react-icons/cg";
 import { CgMathPlus } from "react-icons/cg";
 import Header from './Header';
 import '../styles/todolists.css';
-import '../styles/addboardtolist.css';
+import '../styles/boardItem.css';
 import userOne from '../images/user-one.jpg';
 import userTwo from '../images/user-two.jpg';
 import userThree from '../images/user-three.jpg';

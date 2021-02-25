@@ -21,7 +21,7 @@ const Home = () => {
         setBoardsList(boardList);
     }
 
-    const deleteBoard = (id) => {
+    const selectBoard = (id) => {
         const filteredList = boardsList.filter(board => id !== board.id);
         setBoardsList(filteredList);
     }
@@ -42,7 +42,12 @@ const Home = () => {
                     </div>
                     <div className="boards">
                         {
-                            boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList} closeBoard={deleteBoard}/>
+                            boardsList.length !== 0 && <BoardList 
+                                                            boardsList={boardsList} 
+                                                            setBoardsList={setBoardsList} 
+                                                            closeBoard={selectBoard} 
+                                                            onClick={console.log(selectBoard)}
+                                                        />
                         }
                     </div>
                 </div>
