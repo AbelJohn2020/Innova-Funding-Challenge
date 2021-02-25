@@ -1,10 +1,11 @@
 import React from 'react';
-import '../styles/addboardtolist.css';
+import '../styles/boardItem.css';
 import userTwo from '../images/user-two.jpg';
 import userFour from '../images/user-four.jpg';
 import userseven from '../images/user-seven.jpg';
+import { VscChromeClose } from "react-icons/vsc";
 
-const BoardItem = () => {
+const BoardItem = ({itemId, closeBoard}) => {
     return (
         <div className="board">
             {/* <input 
@@ -13,7 +14,11 @@ const BoardItem = () => {
                 placeholder="Todo for today" 
                 // disabled
             /> */}
-
+            <div className="board--header">
+                <button onClick={() => closeBoard(itemId)} className="board--header__button">
+                    <VscChromeClose className="board--header__button--icon"/>
+                </button>
+            </div>
             <h1 className="board__todo">Todo for today</h1>    
 
             <div className="img-footer">

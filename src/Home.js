@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Boards from './components/Boards';
 import Header from './components/Header';
 // import NewBoard from './components/NewBoard';
@@ -6,34 +6,26 @@ import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList';
 import './styles/home.css';
 
-const testList = [
-    {
-        id: 1,
-    },
-    {
-        id: 2,
-    },
-];
 
 const Home = () => {
-
-    const [boardsList, setBoardsList] = useState(testList);
-    const [newBoard, setNewBoard] = useState([{}]);
+    // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
+    const [boardsList, setBoardsList] = useState([]);
 
     const addBoardToList = () => {
-        console.log(boardsList.length);
-        console.log(newBoard.id === boardsList.length);
+        const newBoard = [{
+            id: boardsList.length,
+            input: '',
+        }]
+        const boardList = [...boardsList, ...newBoard];
+        // console.log(boardList)
+        setBoardsList(boardList);
+    }
 
-        // if (newBoard.id !== boardsList.id){
-        //     newBoard.id = boardsList.length
-        // } else {
-        //     console.log('false')
-        // }
-            
-        const addBoard = [...boardsList, ...newBoard];
-        setBoardsList(addBoard);
-    }   
-
+    const deleteBoard = (id) => {
+        const filteredList = boardsList.filter(board => id !== board.id);
+        setBoardsList(filteredList);
+    }
+    
     return (
         <div>
             <Header />
@@ -50,7 +42,7 @@ const Home = () => {
                     </div>
                     <div className="boards">
                         {
-                            boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList}/>
+                            boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList} closeBoard={deleteBoard}/>
                         }
                     </div>
                 </div>

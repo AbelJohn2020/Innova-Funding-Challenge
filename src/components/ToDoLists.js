@@ -40,7 +40,7 @@ const ToDoLists = () => {
             <div className="todo-list">
                 <button className="todo-list__plus">
                     <CgMathPlus className="todo-list__plus--icon"/>
-                </button>
+                </button>   
 
             </div>
         </div>

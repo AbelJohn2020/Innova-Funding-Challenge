@@ -54,3 +54,27 @@
     border-radius: 100px;
     background: white;
 }
+
+.board--header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.board--header__button {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.board--header__button--icon {
+    font-size: 12px;
+    font-weight: 900;
+}
