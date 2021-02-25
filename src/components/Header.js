@@ -1,14 +1,15 @@
 import React from 'react';
-import { CgAlignBottom } from "react-icons/cg";
+import { CgDetailsLess } from "react-icons/cg"; 
+import '../styles/header.css';
 
 const Header = (props) => {
     return (
         <header>
             <div>
                 {props.home} 
-                <CgAlignBottom />
+                <CgDetailsLess className="header-icon" />
             </div>
-            <button>YL</button>
+            <button className="header--button">YL</button>
         </header>
     )
 }

@@ -1,0 +1,36 @@
+.myboards {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 16px 0 0 0;
+}
+
+.myboards__button {
+    display: flex;
+    align-items: center;
+    padding: 2px 1px;
+    margin: 0 0 12px 16px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.subtitle {
+    color: white;
+    margin: 0 0 12px 0;
+}
+
+.myboards__button--plus {
+    font-size: 24px;
+    color: white;
+}
+
+.myboards__button--plus:hover {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.boards {
+    display: flex;
+    margin: 0 0 24px 0;
+}
