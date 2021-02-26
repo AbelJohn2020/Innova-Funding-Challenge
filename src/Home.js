@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import Boards from './components/Boards';
 import Header from './components/Header';
 // import NewBoard from './components/NewBoard';
 import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList';
+import ToDoLists from './components/ToDoLists';
 import './styles/home.css';
 
 
 const Home = () => {
     // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
     const [boardsList, setBoardsList] = useState([]);
+    const [isTodoOpen, setIsTodoOpen] = useState(false);
 
     const addBoardToList = () => {
         const newBoard = [{
@@ -28,9 +30,12 @@ const Home = () => {
     
     return (
         <div>
-            <Header />
-            <section>
-                <div    >
+            {isTodoOpen ? (
+                <ToDoLists />
+            ) : (
+                <section className="home">
+                <div>
+                    <Header />
                     <div className="myboards">
                         <h1 className="subtitle">My Boards</h1>
                         <button 
@@ -41,28 +46,28 @@ const Home = () => {
                         </button>
                     </div>
                     <div className="boards">
-                        {
-                            boardsList.length !== 0 && <BoardList 
-                                                            boardsList={boardsList} 
-                                                            setBoardsList={setBoardsList} 
-                                                            closeBoard={selectBoard} 
-                                                            onClick={console.log(selectBoard)}
-                                                        />
-                        }
+                        {boardsList.length !== 0 && 
+                        <BoardList
+                            isTodoOpen={isTodoOpen}
+                            setIsTodoOpen={setIsTodoOpen}
+                            boardsList={boardsList} 
+                            setBoardsList={setBoardsList} 
+                            closeBoard={selectBoard} 
+                            onClick={console.log(selectBoard)}
+                        />}
                     </div>
                 </div>
                 {/* <Boards>
                     <NewBoard />
                 </Boards> */}
             </section>
-            <section>
+            )}
+            {/* <section>
                 <h1 className="subtitle">Others Boards</h1>
                 <div className="boards">
-                    {
-                        boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList}/>
-                    }
+                    {boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList}/>}
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 }

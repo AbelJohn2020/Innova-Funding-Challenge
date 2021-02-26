@@ -1,0 +1,51 @@
+.logout,
+.footer,
+.logout--button {
+    display: flex;
+}
+
+.logout,
+.footer {
+    flex-direction: column;
+}
+
+.logout {
+    width: 100%;
+    min-height: 704px;
+    background: transparent;
+    justify-content: flex-end;
+}
+
+.footer,
+.logout--button {
+    background: white; 
+}
+
+.footer {
+    height: 80px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.logout--button {
+    align-items: center;
+    margin: 0 0 0 16px;
+    padding: 4px 8px 4px 0;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+}
+
+.logout--button__icon,
+.logout--button__text {
+    color: #452cb4;
+}
+
+.logout--button__icon {
+    font-size: 20px;
+}
+
+.logout--button__text {
+    font-size: 20px;
+    margin: 0 0 0 8px;
+}

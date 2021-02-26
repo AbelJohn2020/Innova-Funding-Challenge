@@ -6,6 +6,6 @@
 .App {
     max-width: 400px;
     min-height: 704px;
-    padding: 24px 16px;
+    /* padding: 24px 16px; */
     background: #4D2DD9;
 }
