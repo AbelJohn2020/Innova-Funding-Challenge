@@ -6,19 +6,14 @@ const TodoList = () => {
     const [todos, setTodos] = useState([]);
 
     const addTodo = todo => {
-        if(!todo.text || /^\s*$/.test(todo.text)) {
-            return;
-        }
-
-        const joinTo = [todo, ...todos];
-        setTodos(joinTo);
-        console.log('TodoList', joinTo)
+        const newTodoList = [...todos, todo];
+        setTodos(newTodoList);
     }
 
     const todoCompleted = id => {
         let updateTodo = todos.map( todo => (
             todo.id === id
-            ? todo.isComplete = !todo.isComplete
+            ? todo.isCompleted = !todo.isCompleted
             : todo
         ))
         setTodos(updateTodo);
@@ -27,7 +22,7 @@ const TodoList = () => {
     return (
         <div>
             <Todo todos={todos} todoCompleted={todoCompleted}/>
-            <TodoForm onSubmit={addTodo}/>
+            <TodoForm todos={todos} onSubmit={addTodo}/>
         </div>
     )
 }

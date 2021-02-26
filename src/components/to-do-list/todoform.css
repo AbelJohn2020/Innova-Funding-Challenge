@@ -43,3 +43,15 @@
     background: #dedede;
     color: #333333;
 }
+
+
+.dissabled-button {
+    background: red;
+    padding: 2px;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    border-radius: 4px;
+}

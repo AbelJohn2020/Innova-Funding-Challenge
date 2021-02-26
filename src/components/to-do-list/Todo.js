@@ -1,13 +1,13 @@
 import React from 'react'
 
 const Todo = ({todos, todoCompleted}) => {
-    return todos.map( (newTodo, index) => (
+    return todos.map( (todo, index) => (
         <div
-            className={newTodo.isComplete ? 'todo-row complete' : 'todo-row'}
+            className={todo.isCompleted ? 'todo-row complete' : 'todo-row'}
             key={index}
         >
-            <div key={newTodo.id} onClick={() => todoCompleted(newTodo.id)}>
-                {newTodo.text}
+            <div key={todo.id} onClick={() => todoCompleted(todo.id)}>
+                {todo.text}
             </div>
             
         </div>

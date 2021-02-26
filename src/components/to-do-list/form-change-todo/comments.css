@@ -1,0 +1,21 @@
+.user {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.user--photo {
+    width: 32px;
+    height: 32px;
+    margin: 2px 12px 2px 2px;
+    padding: 0;
+    border-radius: 100px;
+}
+
+.user--coment {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    padding: 0 0 8px 0;
+}

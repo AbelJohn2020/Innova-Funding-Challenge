@@ -1,7 +1,8 @@
 import React from 'react';
 // import Home from './Home';
 import './app.css';
-import TodoList from './components/to-do-list/TodoList';
+import Form from './components/to-do-list/form-change-todo/Form';
+// import TodoList from './components/to-do-list/TodoList';
 // import TodoForm from './components/to-do-list/TodoForm';
 // import ToDoLists from './components/ToDoLists';
 
@@ -21,7 +22,8 @@ function App() {
 
   return (
     <div className="App">
-      <TodoList />
+      <Form />
+      {/* <TodoList /> */}
       {/* <TodoForm /> */}
       {/* <Home /> */}
       {/* <ToDoLists /> */}

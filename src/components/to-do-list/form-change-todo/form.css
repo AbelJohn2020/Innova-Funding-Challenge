@@ -1,0 +1,80 @@
+.td--form {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.td--form__textarea,
+.td--form__input,
+.title,
+.td--form__words p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.close-icon {
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.td--form__input,
+.td--form__textarea {
+    background: #EDEDED;
+}
+
+.td--form__input {
+    width: 92%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.td--form__textarea-description,
+.td--form__textarea-commit {
+    width: 91%;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+
+.td--form__textarea-description {
+    height: 100px;
+}
+
+.td--form__textarea-commit {
+    height: 64px;
+}
+
+.title {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin: 12px 0 8px 0;
+}
+
+.td--form__words {
+    margin: 16px 0 0 0;
+    display: flex;
+}
+
+.td--form__words p {
+    margin: 0 4px 0 0;
+    background: green;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.td--form__users {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
