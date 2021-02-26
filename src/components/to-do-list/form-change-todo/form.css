@@ -1,14 +1,27 @@
 .td--form {
+    width: 96%;
+    height: 88%;
     display: flex;
     flex-direction: column;
-    padding: 4px;
+    align-items: center;
+    padding: 8px;
+    background: white;
+    border-radius: 8px;
 }
 
-.td--form__textarea,
+.td--form__textarea-description,
+.td--form__textarea-commit,
 .td--form__input,
 .title,
 .td--form__words p {
     font-family: 'Roboto', sans-serif;
+}
+
+.td--form__icon {
+    width: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .close-icon {
@@ -18,7 +31,8 @@
 }
 
 .td--form__input,
-.td--form__textarea {
+.td--form__textarea-description,
+.td--form__textarea-commit {
     background: #EDEDED;
 }
 
@@ -48,10 +62,11 @@
 
 .td--form__textarea-commit {
     height: 64px;
+    margin: 0 0 16px 0;
 }
 
 .title {
-    width: 100%;
+    width: 96%;
     text-transform: capitalize;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
@@ -61,6 +76,7 @@
 }
 
 .td--form__words {
+    width: 96%;
     margin: 16px 0 0 0;
     display: flex;
 }
