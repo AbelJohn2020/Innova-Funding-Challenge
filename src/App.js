@@ -1,7 +1,8 @@
 import React from 'react';
 // import Home from './Home';
 import './app.css';
-import TodoForm from './components/to-do-list/TodoForm';
+import TodoList from './components/to-do-list/TodoList';
+// import TodoForm from './components/to-do-list/TodoForm';
 // import ToDoLists from './components/ToDoLists';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
 
   return (
     <div className="App">
-      <TodoForm />
+      <TodoList />
+      {/* <TodoForm /> */}
       {/* <Home /> */}
       {/* <ToDoLists /> */}
       {/* { currentSection } */}
