@@ -1,5 +1,7 @@
 .plus-button {
+    position: absolute;
     width: 91%;
+    height: 18%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,18 +18,20 @@
 }
 
 .plus-button__input {
-    width: 96%;
+    width: 92%;
     height: 50px;
     background: #EDEDED;
     margin: 0 0 12px 0;
+    font-size: 14px;
+    padding: 0 0 0 16px;
 }
 
 .plus-button__button {
-    width: 96%;
+    width: 98%;
     height: 50px;
     background: #4d2dd9;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     font-style: normal;

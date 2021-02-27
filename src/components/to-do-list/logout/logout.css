@@ -1,19 +1,10 @@
-.logout,
 .footer,
 .logout--button {
     display: flex;
 }
 
-.logout,
 .footer {
     flex-direction: column;
-}
-
-.logout {
-    width: 100%;
-    min-height: 704px;
-    background: transparent;
-    justify-content: flex-end;
 }
 
 .footer,

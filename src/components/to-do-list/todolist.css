@@ -1,0 +1,19 @@
+.todo--list {
+    width: 184px;
+    min-height: 160px;
+    padding: 8px;
+    margin: 0 0 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.todo--list__title {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #5C5B5B;
+}

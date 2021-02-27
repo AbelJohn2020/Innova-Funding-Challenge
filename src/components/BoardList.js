@@ -3,8 +3,7 @@ import BoardItem from './BoardItem';
 
 
 const BoardList = ({
-    boardsList, 
-    setBoardsList, 
+    boardsList,
     closeBoard,
     isTodoOpen,
     setIsTodoOpen,

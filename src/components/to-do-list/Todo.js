@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './todo.css';
 
 const Todo = ({todos, todoCompleted}) => {
     return todos.map( (todo, index) => (

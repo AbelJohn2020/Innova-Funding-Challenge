@@ -30,17 +30,28 @@ const TodoForm = ({todos, onSubmit}) => {
     }
 
     return (
-            <form className="todo-form" onSubmit={handleSubmit}>
+            <form className={isDisabled ? "todo-form-plus-button" : "todo-form"} onSubmit={handleSubmit}>
                 <CgMathPlus className="todo-icon" onClick={() => setIsDisabled(!isDisabled)}/>
-                <input 
-                    type="text"
-                    placeholder="Add new Card"
-                    className="todo-input"
-                    value={input}
-                    onChange={handleChange}
-                />
                 {
-                    isDisabled && <button className={send ? "todo-button" : "dissabled-button"} onClick={() => {setSend(!send)}}>Send</button>
+                    isDisabled 
+                    ?   <input 
+                            type="text"
+                            placeholder="Add new Card"
+                            className="todo-input"
+                            value={input}
+                            onChange={handleChange}
+                        />
+                    :   <input 
+                            type="text"
+                            placeholder="Add new Card"
+                            className="todo-input"
+                            value={input}
+                            onChange={handleChange}
+                            disabled
+                        />
+                }
+                {
+                    isDisabled && <button className="todo-button" onClick={() => {setSend(!send)}}>Send</button>
                 }
             </form>
     )

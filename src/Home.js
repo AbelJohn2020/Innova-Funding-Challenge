@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Boards from './components/Boards';
 import Header from './components/Header';
 // import NewBoard from './components/NewBoard';
@@ -12,6 +12,11 @@ const Home = () => {
     // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
     const [boardsList, setBoardsList] = useState([]);
     const [isTodoOpen, setIsTodoOpen] = useState(false);
+
+    useEffect(() => {
+        setBoardsList(boardsList);
+        console.log(boardsList);
+    }, [boardsList])
 
     const addBoardToList = () => {
         const newBoard = [{
@@ -31,7 +36,13 @@ const Home = () => {
     return (
         <div>
             {isTodoOpen ? (
-                <ToDoLists />
+                <ToDoLists 
+                    // isTodoOpen={isTodoOpen}
+                    // setIsTodoOpen={setIsTodoOpen}
+                    // boardsList={boardsList} 
+                    // setBoardsList={setBoardsList} 
+                    // onClick={console.log(selectBoard)}
+                />
             ) : (
                 <section className="home">
                 <div>
