@@ -94,3 +94,15 @@
     border: none;
     outline: none;
 }
+
+
+.set-todo-list {
+    min-width: 240px;
+    min-height: 400px;
+    display: flex;
+}
+
+.todo-list {
+    display: flex;
+    align-items: flex-start;
+}

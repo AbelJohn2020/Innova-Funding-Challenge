@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CgHomeAlt } from "react-icons/cg";
 import { CgMathPlus } from "react-icons/cg";
 import Header from './Header';
@@ -14,14 +14,18 @@ import userSeven from '../images/user-seven.jpg';
 import Home from '../Home';
 import ButtonPlus from './to-do-list/plus-buttons/ButtonPlus';
 import LogOut from './to-do-list/logout/LogOut';
-// import TodoList from './to-do-list/TodoList';
+import TodoList from './to-do-list/TodoList';
 
 
-const ToDoLists = () => {
-    const [goToHome, setGoToHome] = useState(false)
-    const [sendInvitation, setSendInvitation] = useState(false)
-    const [createList, setCreateList] = useState(false)
-    const [logout, setLogout] = useState(false) 
+const ToDoLists = ({boardsList, setBoardsList, selectedTodo}) => {
+    const [goToHome, setGoToHome] = useState(false);
+    // const [sendInvitation, setSendInvitation] = useState(false);
+    const [createList, setCreateList] = useState(false);
+    // const [logout, setLogout] = useState(false) 
+    const [sendTodo, setSendTodo] = useState(false);
+    // const createdTasksList = boardsList[selectedTodo];
+    // console.log('createdTasksList', createdTasksList);
+
 
     const iconHome = <CgHomeAlt className="icon-home" />;
     const goHome = <button 
@@ -36,44 +40,31 @@ const ToDoLists = () => {
             )
             : (
                 <div>
-                    {
-                        sendInvitation  && 
+                    {/* {sendInvitation  && 
                         <ButtonPlus 
                             placeholder="yefrioscar9814@gmail.com" 
                             nameButton="Send Invitation"
-                        />
-                    }
+                        />} */}
 
-                    {
-                        createList && 
+                    {createList && 
                         <ButtonPlus 
                             placeholder="Type name of list..." 
                             nameButton="Create List"
-                        />
-                    }
-
-                    {/* <div className={(sendInvitation || logout) ? "shadow" : "todolists"}> */}
+                            boardsList={boardsList}
+                            setBoardsList={setBoardsList}
+                            sendTodo={sendTodo}
+                            setSendTodo={setSendTodo}
+                            selectedTodo={selectedTodo}
+                        />}
+                        
                     <div className="todolists">
                         <Header 
                             home={goHome} 
-                            sendInvitation={sendInvitation}
+                            // sendInvitation={sendInvitation}
                             createList={createList}
-                            logout={logout}
-                            setLogout={setLogout}
+                            // logout={logout}
+                            // setLogout={setLogout}
                         />
-                        {/* {logout 
-                            ?    <input 
-                                    className="title-todo"
-                                    placeholder="Todo for today"
-                                    // value={inputTitle}
-                                    disabled
-                                />
-                            :   <input 
-                                    className="title-todo"
-                                    placeholder="Todo for today"
-                                    // value={inputTitle}
-                                />
-                        } */}
 
                         <input 
                             className="title-todo"
@@ -81,10 +72,9 @@ const ToDoLists = () => {
                             // value={inputTitle}
                         />
                         <div className="todo-invite-user">
-                            <button className="todo-invite-user__plus" onClick={() => setSendInvitation(!sendInvitation)}>
+                            {/* <button className="todo-invite-user__plus" onClick={() => setSendInvitation(!sendInvitation)}>
                                 <CgMathPlus className="todo-invite-user__plus--icon"/>
-                                {/* <CgMathPlus className={(sendInvitation || logout) ? "shadow-button-list-icon" : "todo-invite-user__plus--icon"}/> */}
-                            </button>
+                            </button> */}
 
                             <img className="img-footer--user border-user" src={userOne} alt="Woman user"/>
                             <img className="img-footer--user border-user" src={userTwo} alt="Woman user"/>
@@ -100,17 +90,14 @@ const ToDoLists = () => {
                             <button className="todo-list__plus" onClick={() => setCreateList(!createList)}>
                                 <CgMathPlus className="todo-list__plus--icon"/>
                             </button> 
-                            {/* <button className={(sendInvitation || logout) ? "shadow-button-list" :"todo-list__plus" }>
-                                <CgMathPlus className={(sendInvitation || logout) ? "shadow-button-list-icon" : "todo-list__plus--icon"}/>
-                            </button> */}
-                            <div>
-                                
+                            <div className="set-todo-list">
+                                {boardsList[selectedTodo].taskList.map(task => (
+                                    <TodoList key={task.id} taskName={task.name} taskId={task.id}/>
+                                ))}
                             </div>  
                         </div>
                     </div>
-                        {
-                            logout && <LogOut />
-                        }
+                        {/* {logout && <LogOut />} */}
                 </div>
             )}
         </div>

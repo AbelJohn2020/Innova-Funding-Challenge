@@ -12,26 +12,24 @@ const Home = () => {
     // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
     const [boardsList, setBoardsList] = useState([]);
     const [isTodoOpen, setIsTodoOpen] = useState(false);
+    const [selectedTodo, setSelectedTodo] = useState(null);
 
-    useEffect(() => {
-        setBoardsList(boardsList);
-        console.log(boardsList);
-    }, [boardsList])
 
     const addBoardToList = () => {
         const newBoard = [{
             id: boardsList.length,
             input: '',
+            taskList: [],
         }]
         const boardList = [...boardsList, ...newBoard];
-        // console.log(boardList)
         setBoardsList(boardList);
     }
 
     const selectBoard = (id) => {
         const filteredList = boardsList.filter(board => id !== board.id);
         setBoardsList(filteredList);
-    }
+    };
+
     
     return (
         <div>
@@ -39,8 +37,9 @@ const Home = () => {
                 <ToDoLists 
                     // isTodoOpen={isTodoOpen}
                     // setIsTodoOpen={setIsTodoOpen}
-                    // boardsList={boardsList} 
-                    // setBoardsList={setBoardsList} 
+                    boardsList={boardsList} 
+                    setBoardsList={setBoardsList}
+                    selectedTodo={selectedTodo}
                     // onClick={console.log(selectBoard)}
                 />
             ) : (
@@ -58,13 +57,13 @@ const Home = () => {
                     </div>
                     <div className="boards">
                         {boardsList.length !== 0 && 
-                        <BoardList
-                            isTodoOpen={isTodoOpen}
-                            setIsTodoOpen={setIsTodoOpen}
-                            boardsList={boardsList} 
-                            setBoardsList={setBoardsList} 
-                            closeBoard={selectBoard} 
-                            onClick={console.log(selectBoard)}
+                            <BoardList
+                                isTodoOpen={isTodoOpen}
+                                setIsTodoOpen={setIsTodoOpen}
+                                boardsList={boardsList} 
+                                closeBoard={selectBoard}
+                                selectedTodo={selectedTodo}
+                                setSelectedTodo={setSelectedTodo}
                         />}
                     </div>
                 </div>

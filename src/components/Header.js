@@ -15,7 +15,7 @@ const Header = ({
                 {home} 
                 <CgDetailsLess className={(sendInvitation || createList)? "dissable-icon" :"header-icon"}/>
             </div>
-            <button className="header--button" onClick={() => setLogout(!logout)}>YL</button>
+            {/* <button className="header--button" onClick={() => setLogout(!logout)}>YL</button> */}
         </header>
     )
 }
