@@ -3,22 +3,23 @@ import { CgMathPlus } from "react-icons/cg";
 import './todoform.css';
 
 const TodoForm = ({todos, onSubmit}) => {
-    const [input, setInput] = useState('');
+    const [inputText, setInputText] = useState('');
     const [isDisabled, setIsDisabled] = useState(false);
     const [send, setSend] = useState(true);
 
     const handleChange = e => {
-        setInput(e.target.value)
+        setInputText(e.target.value)
     };
 
     const handleSubmit = e => {
         e.preventDefault();
         onSubmit({
             id: todos.length,
-            text: input,
-            isCompleted: false,
+            text: inputText,
+            description: '',
+            comments: [],
         })
-        setInput('');
+        setInputText('');
     };
 
     return (
@@ -30,14 +31,14 @@ const TodoForm = ({todos, onSubmit}) => {
                             type="text"
                             placeholder="Add new Card"
                             className="todo-input"
-                            value={input}
+                            value={inputText}
                             onChange={handleChange}
                         />
                     :   <input 
                             type="text"
                             placeholder="Add new Card"
                             className="todo-input"
-                            value={input}
+                            value={inputText}
                             onChange={handleChange}
                             disabled
                         />

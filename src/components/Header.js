@@ -1,21 +1,31 @@
 import React from 'react';
 import { CgDetailsLess } from "react-icons/cg"; 
 import '../styles/header.css';
+import ButtonHome from './to-do-list/button-home/ButtonHome';
 
 const Header = ({
-    home, 
+    // goToHome, 
+    // setGoToHome,
     sendInvitation, 
-    logout, 
+    createList,
     setLogout,
-    createList, 
+    logout,
+    isTodoOpen,
+    setIsTodoOpen,
 }) => {
     return (
         <header>
             <div className="go-home"> 
-                {home} 
+                {isTodoOpen && <ButtonHome isTodoOpen={isTodoOpen} setIsTodoOpen={setIsTodoOpen}/>} 
                 <CgDetailsLess className={(sendInvitation || createList)? "dissable-icon" :"header-icon"}/>
             </div>
-            {/* <button className="header--button" onClick={() => setLogout(!logout)}>YL</button> */}
+            <button 
+                className="header--button" 
+                onClick={() => {
+                    // setIsTodoOpen(!isTodoOpen)
+                    setLogout(!logout)
+                }}
+            >YL</button>
         </header>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import Boards from './components/Boards';
 import Header from './components/Header';
 // import NewBoard from './components/NewBoard';
@@ -6,8 +6,9 @@ import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList';
 import ToDoLists from './components/ToDoLists';
 import './styles/home.css';
+import LogOut from './components/to-do-list/logout/LogOut';
 
-
+// {logout, setLogout,goToHome, setGoToHome,}
 const Home = () => {
     // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
     const [boardsList, setBoardsList] = useState([]);
@@ -35,17 +36,21 @@ const Home = () => {
         <div>
             {isTodoOpen ? (
                 <ToDoLists 
-                    // isTodoOpen={isTodoOpen}
-                    // setIsTodoOpen={setIsTodoOpen}
+                    isTodoOpen={isTodoOpen}
+                    setIsTodoOpen={setIsTodoOpen}
                     boardsList={boardsList} 
                     setBoardsList={setBoardsList}
                     selectedTodo={selectedTodo}
-                    // onClick={console.log(selectBoard)}
                 />
             ) : (
                 <section className="home">
                 <div>
-                    <Header />
+                    <Header 
+                        // isTodoOpen={isTodoOpen}
+                        // setIsTodoOpen={setIsTodoOpen}
+                        // logout={logout} 
+                        // setLogout={setLogout}
+                    />
                     <div className="myboards">
                         <h1 className="subtitle">My Boards</h1>
                         <button 
@@ -78,6 +83,7 @@ const Home = () => {
                     {boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList}/>}
                 </div>
             </section> */}
+            {/* {logout && <LogOut logout={logout} setLogout={setLogout} goToHome={goToHome} setGoToHome={setGoToHome}/>} */}
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './buttonplus.css';
 
 const ButtonPlus = ({ 
@@ -9,12 +9,14 @@ const ButtonPlus = ({
     boardsList,
     setBoardsList,
     selectedTodo,
+    createList, 
+    setCreateList,
 }) => {
 
     const [inputValue, setInputValue] = useState('');
     const boardListTasks = boardsList[selectedTodo];
 
-
+    console.log(createList)
     const handleChange = e => {
         setInputValue(e.target.value);
     };
@@ -33,23 +35,29 @@ const ButtonPlus = ({
     };
 
     return (
-        <div>
+        <div className="plus">
             <div className="plus-plus">
                 <form className="plus-button">
                     <input 
                         type="text"
                         className="plus-button__input"
-                        placeholder={ placeholder }
+                        placeholder={placeholder}
                         value={inputValue}
                         onChange={(e) => handleChange(e)}
                     />
                 </form>
                     <button
                         className="plus-button__button" 
-                        onClick={() => handleSubmit()}
+                        onClick={() => {
+                            handleSubmit();
+                            setCreateList(!createList)
+                        }}
                     >
                         {nameButton} 
                     </button>
+            </div>
+            <div className="empty-space" onClick={() => setCreateList(!createList)}>
+
             </div>
         </div>
     )
