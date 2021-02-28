@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import { CgMathPlus } from "react-icons/cg";
-import Header from './Header';
-import '../styles/todolists.css';
-import '../styles/boardItem.css';
-import userOne from '../images/user-one.jpg';
-import userTwo from '../images/user-two.jpg';
-import userThree from '../images/user-three.jpg';
-import userFour from '../images/user-four.jpg';
-import userFive from '../images/user-five.jpg';
-import userSix from '../images/user-six.jpg';
-import userSeven from '../images/user-seven.jpg';
-import Home from '../Home';
-import ButtonPlus from './to-do-list/plus-buttons/ButtonPlus';
-import LogOut from './to-do-list/logout/LogOut';
-import TodoList from './to-do-list/TodoList';
-import ButtonPlusSendInvitation from './to-do-list/plus-buttons/ButtonPlusSendInvitation';
+import Header from '../Header/Header';
+import '../BoardItem/boardItem.css';
+import './taskslist.css';
+import userOne from '../../images/user-one.jpg';
+import userTwo from '../../images/user-two.jpg';
+import userThree from '../../images/user-three.jpg';
+import userFour from '../../images/user-four.jpg';
+import userFive from '../../images/user-five.jpg';
+import userSix from '../../images/user-six.jpg';
+import userSeven from '../../images/user-seven.jpg';
+import Home from '../../Home';
+import CreateBoard from '../CreateBoard/CreateBoard';
+import Logout from '../Logout/Logout';
+import TodoList from '../TodoList/TodoList';
+import SendInvitation from '../SendInvitation/SendInvitation';
 
 // import Form from './to-do-list/form-change-todo/Form';
 
-const myGuests = [
+const guestsList = [
     {
         id: 1,
         image: userOne,
@@ -63,7 +63,7 @@ const myGuests = [
     },
 ];
 
-const ToDoLists = ({
+const TaskList = ({
     boardsList, 
     setBoardsList, 
     selectedTodo,
@@ -75,7 +75,6 @@ const ToDoLists = ({
     const [createList, setCreateList] = useState(false);
     const [logout, setLogout] = useState(false) 
     const [sendTodo, setSendTodo] = useState(false);
-    const [guests, setGuests] = useState(myGuests)
 
     return (
         <div>
@@ -91,7 +90,7 @@ const ToDoLists = ({
             : (
                 <div className="todo-lists-container">
                     {sendInvitation  && 
-                        <ButtonPlusSendInvitation
+                        <SendInvitation
                             placeholder="yefrioscar9814@gmail.com" 
                             nameButton="Send Invitation"
                             setSendInvitation={setSendInvitation}
@@ -99,7 +98,7 @@ const ToDoLists = ({
                         />}
 
                     {createList && 
-                        <ButtonPlus 
+                        <CreateBoard 
                             placeholder="Type name of list..." 
                             nameButton="Create List"
                             boardsList={boardsList}
@@ -132,7 +131,7 @@ const ToDoLists = ({
                             <button className="todo-invite-user__plus" onClick={() => setSendInvitation(!sendInvitation)}>
                                 <CgMathPlus className="todo-invite-user__plus--icon"/>
                             </button>
-                            {guests.map(guest => (
+                            {guestsList.map(guest => (
                                     <img 
                                         key={guest.id} 
                                         src={guest.image}
@@ -157,11 +156,11 @@ const ToDoLists = ({
                             </div>  
                         </div>
                     </div>
-                        {logout && <LogOut logout={logout} setLogout={setLogout} goToHome={goToHome} setGoToHome={setGoToHome}/>}
+                        {logout && <Logout logout={logout} setLogout={setLogout} goToHome={goToHome} setGoToHome={setGoToHome}/>}
                 </div>
             )}
         </div>
     )
 }
 
-export default ToDoLists
+export default TaskList;

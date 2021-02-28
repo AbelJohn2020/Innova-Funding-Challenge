@@ -1,7 +1,7 @@
 import React from 'react';
-import './buttonplus.css';
+import '../CreateBoard/createBoard.css';
 
-const ButtonPlusSendInvitation = ({
+const SendInvitation = ({
     placeholder,
     nameButton,
     sendInvitation,
@@ -35,4 +35,4 @@ const ButtonPlusSendInvitation = ({
     )
 }
 
-export default ButtonPlusSendInvitation
+export default SendInvitation

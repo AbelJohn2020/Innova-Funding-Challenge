@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 // import Boards from './components/Boards';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 // import NewBoard from './components/NewBoard';
 import { CgAdd } from "react-icons/cg";
-import BoardList from './components/BoardList';
-import ToDoLists from './components/ToDoLists';
-import './styles/home.css';
-import LogOut from './components/to-do-list/logout/LogOut';
+import BoardList from './components/BoardList/BoardList';
+import TaskList from './components/TaskList/TaskList';
+import './home.css';
+import Logout from './components/Logout/Logout';
+import OtherBoard from './components/OtherBoard/OtherBoard';
 
 // {logout, setLogout,goToHome, setGoToHome,}
 const Home = () => {
@@ -35,7 +36,7 @@ const Home = () => {
     return (
         <div>
             {isTodoOpen ? (
-                <ToDoLists 
+                <TaskList 
                     isTodoOpen={isTodoOpen}
                     setIsTodoOpen={setIsTodoOpen}
                     boardsList={boardsList} 
@@ -69,19 +70,17 @@ const Home = () => {
                                 setSelectedTodo={setSelectedTodo}
                         />}
                     </div>
+                    
+                    <div className="myboards">
+                        <h1 className="subtitle">Others Boards</h1>
+                    </div>
+                    <div className="boards">
+                        <OtherBoard title="Todo for today" />
+                        <OtherBoard title="Other todo" />
+                    </div>
                 </div>
-                {/* <Boards>
-                    <NewBoard />
-                </Boards> */}
             </section>
             )}
-            {/* <section>
-                <h1 className="subtitle">Others Boards</h1>
-                <div className="boards">
-                    {boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList}/>}
-                </div>
-            </section>
-            {/* {logout && <LogOut logout={logout} setLogout={setLogout} goToHome={goToHome} setGoToHome={setGoToHome}/>} */}
         </div>
     )
 }

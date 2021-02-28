@@ -1,16 +1,13 @@
 import React from 'react';
 import { FiLogOut } from "react-icons/fi";
-import Home from '../../../Home';
-import ToDoLists from '../../ToDoLists';
 import './logout.css';
 
-const LogOut = ({
+const Logout = ({
     logout, 
     setLogout,
     goToHome,
     setGoToHome,
 }) => {
-    console.log(logout)
     return (
         <div className="signout">
             <div className="empty-space"onClick={() => setLogout(!logout)}></div>
@@ -25,4 +22,4 @@ const LogOut = ({
     )
 }
 
-export default LogOut
+export default Logout;

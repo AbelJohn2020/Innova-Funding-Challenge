@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { VscChromeClose } from "react-icons/vsc";
-import Comments from './Comments';
-import './form.css';
-import userTwo from '../../../images/user-two.jpg';
-import userFour from '../../../images/user-four.jpg';
-import userSeven from '../../../images/user-seven.jpg';
+import CommentList from '../CommentList/CommentList';
+import userTwo from '../../images/user-two.jpg';
+import userFour from '../../images/user-four.jpg';
+import userSeven from '../../images/user-seven.jpg';
+import './taskItem.css';
 
 const getUsers = [
     {
@@ -25,9 +25,9 @@ const getUsers = [
         alt: 'User Profile',
         comment: 'Lorem Ipsum is simply summy text of the',
     },
-]
+];
 
-const Form = ({ 
+const TaskItem = ({ 
     todos,
     setTodos, 
     callForm, 
@@ -37,7 +37,7 @@ const Form = ({
 
     const todoItemSelected = todos[selectedTask];
     const {text, description, comments} = todoItemSelected;
-    const [todoItem, setTodoItem] = useState({
+    const [taskItems, setTaskItems] = useState({
         id: null,
         text: text,
         description: description,
@@ -45,11 +45,11 @@ const Form = ({
     });
     
     const handleChange = (e) => {
-        setTodoItem({...todoItem, [e.target.name]: e.target.value });
+        setTaskItems({...taskItems, [e.target.name]: e.target.value });
         const modifiedList = todos.map(todo => {
             if (todo.id === todoItemSelected.id) {
-                todo.text = todoItem.text;
-                todo.description = todoItem.description;
+                todo.text = taskItems.text;
+                todo.description = taskItems.description;
             }
             return todo;
         });
@@ -57,27 +57,8 @@ const Form = ({
     };
 
     const handleChangeComment = (e) => {
-        setTodoItem([...comments, e.target.value]);
+        setTaskItems([...comments, e.target.value]);
     };
-
-    // const onSubmitComment = () => {
-    //     const newCommentsLists = {...todoItemSelected, 
-    //         comments: [...todoItemSelected.comments, {
-    //             id: todoItemSelected.comments.length,
-    //             name: todoItem.comment,
-    //         }]};
-    //     setTodos([newCommentsLists]);
-    //     setTodoItem({...todoItem, comment: ''});
-    //     console.log('onSubmitComment', newCommentsLists);
-    //     // const newCommentsLists = {...todos,
-    //     // todos: [...]}
-    //     // setTodos.filter(todo => todo.id === todoItemSelected.id);
-    // };
-
-    console.log({
-        todoItem: todoItem,
-        updatedTodoSelected: todoItemSelected
-    });
 
     return (
         <form className="td--form">
@@ -86,7 +67,7 @@ const Form = ({
             </div>
             <input
                 name='text'
-                value={todoItem.text}
+                value={taskItems.text}
                 className="td--form__input"
                 placeholder="What are you looking for"
                 onChange={(e) => handleChange(e)}
@@ -94,7 +75,7 @@ const Form = ({
             <label className="title">description</label>
             <textarea
                 name='description'
-                value={todoItem.description}
+                value={taskItems.description}
                 className="td--form__textarea-description"
                 placeholder="Type description here..."
                 onChange={(e) => handleChange(e)}
@@ -107,7 +88,7 @@ const Form = ({
             <label className="title">comments</label>
             <ul className="td--form__users">
                 {getUsers.map(user => (
-                        <Comments 
+                            <CommentList 
                             key={user.id}
                             image={user.image}
                             alt={user.alt}
@@ -118,7 +99,7 @@ const Form = ({
 
             <textarea
                 name='comment'
-                value={todoItem.comment}
+                value={taskItems.comment}
                 className="td--form__textarea-commit"
                 placeholder="Type comment here..."
                 onChange={(e) => handleChangeComment(e)}
@@ -127,4 +108,4 @@ const Form = ({
     )
 }
 
-export default Form
+export default TaskItem
