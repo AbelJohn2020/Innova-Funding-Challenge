@@ -37,5 +37,6 @@
 
 .boards {
     display: flex;
+    min-height: 168px;
     margin: 0 0 24px 0;
 }

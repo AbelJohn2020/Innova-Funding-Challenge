@@ -1,7 +1,7 @@
 import React from 'react';
-import './comments.css';
+import './commentList.css';
 
-const Comments = ({image, alt, comment}) => {
+const CommentList = ({image, alt, comment}) => {
     return (
         <li className="user">
             <img className="user--photo" src={image} alt={alt}/>
@@ -10,4 +10,4 @@ const Comments = ({image, alt, comment}) => {
     )  
 }
 
-export default Comments;
+export default CommentList;

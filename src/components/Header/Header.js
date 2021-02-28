@@ -1,11 +1,9 @@
 import React from 'react';
 import { CgDetailsLess } from "react-icons/cg"; 
-import '../styles/header.css';
-import ButtonHome from './to-do-list/button-home/ButtonHome';
+import './header.css';
+import ButtonHome from '../ButtonHome/ButtonHome';
 
 const Header = ({
-    // goToHome, 
-    // setGoToHome,
     sendInvitation, 
     createList,
     setLogout,
@@ -22,7 +20,6 @@ const Header = ({
             <button 
                 className="header--button" 
                 onClick={() => {
-                    // setIsTodoOpen(!isTodoOpen)
                     setLogout(!logout)
                 }}
             >YL</button>

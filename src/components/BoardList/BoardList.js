@@ -1,5 +1,5 @@
 import React  from 'react';
-import BoardItem from './BoardItem';
+import BoardItem from '../BoardItem/BoardItem';
 
 
 const BoardList = ({

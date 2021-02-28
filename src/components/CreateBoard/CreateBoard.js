@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './buttonplus.css';
+import './createBoard.css';
 
-const ButtonPlus = ({ 
+const CreateBoard = ({ 
     nameButton, 
     placeholder, 
     sendTodo, 
@@ -77,4 +77,4 @@ const ButtonPlus = ({
 
 
 
-export default ButtonPlus
+export default CreateBoard

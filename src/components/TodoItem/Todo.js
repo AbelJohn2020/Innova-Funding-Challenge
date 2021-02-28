@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Form from './form-change-todo/Form';
+import TaskItem from '../TaskItem/TaskItem';
 import './todo.css';
 
 const Todo = ({
@@ -18,7 +18,7 @@ const Todo = ({
                 {todo.text}
             </div>
             {
-                callForm && <Form todo={todo} todos={todos} setTodos={setTodos} callForm={callForm} setCallForm={setCallForm} selectedTask={selectedTask}/>
+                callForm && <TaskItem todo={todo} todos={todos} setTodos={setTodos} callForm={callForm} setCallForm={setCallForm} selectedTask={selectedTask}/>
             }   
         </div>
     )
