@@ -122,7 +122,6 @@ const Form = ({
                 className="td--form__textarea-commit"
                 placeholder="Type comment here..."
                 onChange={(e) => handleChangeComment(e)}
-                // onSubmit={(e) => onSubmitComment(e)}
             />
         </form>
     )

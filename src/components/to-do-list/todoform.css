@@ -1,3 +1,24 @@
+.box-show-error {
+    width: 92%;
+    display: flex;
+    align-items: center;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold; 
+    margin: 0;
+    padding: 0;
+}
+
+.box-show-error__message {
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 4px 0 0;
+    padding: 0; 
+}
+
 .todo-form {
     display: flex;
     align-items: center;

@@ -6,6 +6,7 @@ const ButtonPlusSendInvitation = ({
     nameButton,
     sendInvitation,
     setSendInvitation,
+
 }) => {
     return (
         <div className="plus">

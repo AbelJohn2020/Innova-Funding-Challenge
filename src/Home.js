@@ -48,8 +48,6 @@ const Home = () => {
                     <Header 
                         // isTodoOpen={isTodoOpen}
                         // setIsTodoOpen={setIsTodoOpen}
-                        // logout={logout} 
-                        // setLogout={setLogout}
                     />
                     <div className="myboards">
                         <h1 className="subtitle">My Boards</h1>
@@ -82,7 +80,7 @@ const Home = () => {
                 <div className="boards">
                     {boardsList.length !== 0 && <BoardList boardsList={boardsList} setBoardsList={setBoardsList}/>}
                 </div>
-            </section> */}
+            </section>
             {/* {logout && <LogOut logout={logout} setLogout={setLogout} goToHome={goToHome} setGoToHome={setGoToHome}/>} */}
         </div>
     )

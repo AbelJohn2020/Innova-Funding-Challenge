@@ -15,9 +15,11 @@ const ButtonPlus = ({
 
     const [inputValue, setInputValue] = useState('');
     const boardListTasks = boardsList[selectedTodo];
+    const [showError, setShowError] = useState(false);
 
     const handleChange = e => {
         setInputValue(e.target.value);
+        setShowError(false);
     };
 
     const handleSubmit = () => {
@@ -28,14 +30,20 @@ const ButtonPlus = ({
                 name: inputValue,
             }],
         };
-        setBoardsList([newTaskLists]);
-        setInputValue('');
-        setSendTodo(!sendTodo);
+
+        if (inputValue) {
+            setBoardsList([newTaskLists]);
+            setInputValue('');
+            setSendTodo(!sendTodo);
+        } else {
+            setShowError(true)
+            setCreateList(createList)
+        }
     };
 
     return (
         <div className="plus">
-            <div className="plus-plus">
+            <div className={showError ? "plus-whit-error" : "plus-plus"}>
                 <form className="plus-button">
                     <input 
                         type="text"
@@ -45,11 +53,16 @@ const ButtonPlus = ({
                         onChange={(e) => handleChange(e)}
                     />
                 </form>
+                {showError && 
+                    <div className="box-show-error">
+                        <p className="box-show-error__message">This field cannot be empty</p> *
+                    </div>
+                }
                     <button
                         className="plus-button__button" 
                         onClick={() => {
-                            handleSubmit();
                             setCreateList(!createList)
+                            handleSubmit()
                         }}
                     >
                         {nameButton} 
