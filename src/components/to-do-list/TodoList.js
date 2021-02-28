@@ -4,8 +4,9 @@ import TodoForm from './TodoForm';
 
 import './todolist.css';
 
-const TodoList = ({taskName, }) => {
+const TodoList = ({taskName}) => {
     const [todos, setTodos] = useState([]);
+    const [selectedTask, setSelectedTask] = useState(null);
 
     const addTodo = todo => {
         const newTodoList = [...todos, todo];
@@ -21,11 +22,19 @@ const TodoList = ({taskName, }) => {
                         <Todo
                             key={todo.id}
                             todo={todo}
+                            todoId={todo.id}
+                            todos={todos}
+                            setTodos={setTodos}
+                            selectedTask={selectedTask}
+                            setSelectedTask={setSelectedTask}
                         />
                         )
                     )}
                 </div>
-                <TodoForm todos={todos} onSubmit={addTodo}/>
+                <TodoForm 
+                    todos={todos} 
+                    onSubmit={addTodo}
+                />
             </div>
         </div>
     )

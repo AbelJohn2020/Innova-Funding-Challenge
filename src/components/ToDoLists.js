@@ -15,8 +15,53 @@ import ButtonPlus from './to-do-list/plus-buttons/ButtonPlus';
 import LogOut from './to-do-list/logout/LogOut';
 import TodoList from './to-do-list/TodoList';
 import ButtonPlusSendInvitation from './to-do-list/plus-buttons/ButtonPlusSendInvitation';
+
 // import Form from './to-do-list/form-change-todo/Form';
 
+const myGuests = [
+    {
+        id: 1,
+        image: userOne,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+    {
+        id: 2,
+        image: userTwo,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+    {
+        id: 3,
+        image: userThree,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+    {
+        id: 4,
+        image: userFour,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+    {
+        id: 5,
+        image: userFive,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+    {
+        id: 6,
+        image: userSix,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+    {
+        id: 7,
+        image: userSeven,
+        alt: 'User profile',
+        className: 'img-footer--user border-user'
+    },
+];
 
 const ToDoLists = ({
     boardsList, 
@@ -30,6 +75,7 @@ const ToDoLists = ({
     const [createList, setCreateList] = useState(false);
     const [logout, setLogout] = useState(false) 
     const [sendTodo, setSendTodo] = useState(false);
+    const [guests, setGuests] = useState(myGuests)
 
     return (
         <div>
@@ -86,15 +132,14 @@ const ToDoLists = ({
                             <button className="todo-invite-user__plus" onClick={() => setSendInvitation(!sendInvitation)}>
                                 <CgMathPlus className="todo-invite-user__plus--icon"/>
                             </button>
-
-                            <img className="img-footer--user border-user" src={userOne} alt="Woman user"/>
-                            <img className="img-footer--user border-user" src={userTwo} alt="Woman user"/>
-                            <img className="img-footer--user border-user" src={userThree} alt="Woman user"/>
-                            <img className="img-footer--user border-user" src={userFour} alt="Woman user"/>
-                            <img className="img-footer--user border-user" src={userFive} alt="Man user"/>
-                            <img className="img-footer--user border-user" src={userSix} alt="Man user"/>
-                            <img className="img-footer--user border-user" src={userSeven} alt="Man user"/>
-            
+                            {guests.map(guest => (
+                                    <img 
+                                        key={guest.id} 
+                                        src={guest.image}
+                                        alt={guest.alt}
+                                        className={guest.className}
+                                    />
+                            ))}
                         </div>
             
                         <div className="todo-list">

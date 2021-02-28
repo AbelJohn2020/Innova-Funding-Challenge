@@ -16,7 +16,6 @@ const ButtonPlus = ({
     const [inputValue, setInputValue] = useState('');
     const boardListTasks = boardsList[selectedTodo];
 
-    console.log(createList)
     const handleChange = e => {
         setInputValue(e.target.value);
     };
