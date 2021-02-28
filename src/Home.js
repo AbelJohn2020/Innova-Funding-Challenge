@@ -42,10 +42,7 @@ const Home = ({
         <div>
             <section className="home">
                 <div>
-                    <Header 
-                        // isTodoOpen={isTodoOpen}
-                        // setIsTodoOpen={setIsTodoOpen}
-                    />
+                    <Header />
                     <div className="myboards">
                         <h1 className="subtitle">My Boards</h1>
                         <button 
