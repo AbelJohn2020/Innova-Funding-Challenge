@@ -5,16 +5,22 @@ import Header from './components/Header/Header';
 import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList/BoardList';
 import TaskList from './components/TaskList/TaskList';
-import './home.css';
-import Logout from './components/Logout/Logout';
+import './Home.css';
+// import Logout from './components/Logout/Logout';
 import OtherBoard from './components/OtherBoard/OtherBoard';
 
 // {logout, setLogout,goToHome, setGoToHome,}
-const Home = () => {
+const Home = ({
+    boardsList, 
+    setBoardsList,
+    isTodoOpen,
+    setIsTodoOpen,
+    selectedTodo,
+    setSelectedTodo,
+}) => {
     // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
-    const [boardsList, setBoardsList] = useState([]);
-    const [isTodoOpen, setIsTodoOpen] = useState(false);
-    const [selectedTodo, setSelectedTodo] = useState(null);
+    // const [isTodoOpen, setIsTodoOpen] = useState(false);
+    // const [selectedTodo, setSelectedTodo] = useState(null);
 
 
     const addBoardToList = () => {
@@ -31,20 +37,10 @@ const Home = () => {
         const filteredList = boardsList.filter(board => id !== board.id);
         setBoardsList(filteredList);
     };
-
     
     return (
         <div>
-            {isTodoOpen ? (
-                <TaskList 
-                    isTodoOpen={isTodoOpen}
-                    setIsTodoOpen={setIsTodoOpen}
-                    boardsList={boardsList} 
-                    setBoardsList={setBoardsList}
-                    selectedTodo={selectedTodo}
-                />
-            ) : (
-                <section className="home">
+            <section className="home">
                 <div>
                     <Header 
                         // isTodoOpen={isTodoOpen}
@@ -80,7 +76,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            )}
         </div>
     )
 }

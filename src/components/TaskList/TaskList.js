@@ -75,9 +75,10 @@ const TaskList = ({
     const [createList, setCreateList] = useState(false);
     const [logout, setLogout] = useState(false) 
     const [sendTodo, setSendTodo] = useState(false);
+    console.log('g', boardsList[selectedTodo])
 
     return (
-        <div>
+        <div>   
             { goToHome
             ? (
                 <Home 
@@ -125,7 +126,6 @@ const TaskList = ({
                         <input 
                             className="title-todo"
                             placeholder="Todo for today"
-                            // value={inputTitle}
                         />
                         <div className="todo-invite-user">
                             <button className="todo-invite-user__plus" onClick={() => setSendInvitation(!sendInvitation)}>
@@ -146,13 +146,13 @@ const TaskList = ({
                                 <CgMathPlus className="todo-list__plus--icon"/>
                             </button> 
                             <div className="set-todo-list">
-                                {boardsList[selectedTodo].taskList.map(task => (
+                                {/* {boardsList[selectedTodo].taskList.map(task => (
                                     <TodoList 
                                         key={task.id} 
                                         taskName={task.name} 
                                         taskId={task.id}
                                     />
-                                ))}
+                                ))} */}
                             </div>  
                         </div>
                     </div>
