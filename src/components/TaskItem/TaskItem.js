@@ -34,7 +34,6 @@ const TaskItem = ({
     setCallForm, 
     selectedTask,
 }) => {
-
     const todoItemSelected = todos[selectedTask];
     const {text, description, comments} = todoItemSelected;
     const [taskItems, setTaskItems] = useState({

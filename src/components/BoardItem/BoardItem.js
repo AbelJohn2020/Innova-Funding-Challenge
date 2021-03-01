@@ -1,5 +1,6 @@
 import React from 'react';
 import './boardItem.css';
+import { useHistory } from "react-router-dom";
 import userTwo from '../../images/user-two.jpg';
 import userFour from '../../images/user-four.jpg';
 import userseven from '../../images/user-seven.jpg';
@@ -33,9 +34,12 @@ const BoardItem = ({
     setIsTodoOpen,
     setSelectedTodo
     }) => {
-
+    let history = useHistory();
     return (
-        <div className="board" onClick={() => setSelectedTodo(itemId)}>
+        <div className="board" onClick={() => {
+            setSelectedTodo(itemId);
+            history.push(`/tasks/${itemId}`)
+        }}>
             <div className="board--header">
                 <button 
                     className="board--header__button" 
