@@ -4,7 +4,7 @@ import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList/BoardList';
 import Logout from './components/Logout/Logout';
 import OtherBoard from './components/OtherBoard/OtherBoard';
-import './index.css';
+import styles from './index.module.css';
 
 
 const Home = ({
@@ -34,19 +34,19 @@ const Home = ({
     
     return (
         <div>
-            <section className="home">
+            <section className={styles.Home}>
                 <div>
                     <Header logout={logout} setLogout={setLogout}/>
-                    <div className="myboards">
-                        <h1 className="subtitle">My Boards</h1>
+                    <div className={styles.Myboards}>
+                        <h1 className={styles.Subtitle}>My Boards</h1>
                         <button 
-                            className="myboards__button"
+                            className={styles.MyboardsButton}
                             onClick={() => addBoardToList()}
                         >
-                            <CgAdd className="myboards__button--plus" />
+                            <CgAdd className={styles.MyboardsButtonPlus} />
                         </button>
                     </div>
-                    <div className="boards">
+                    <div className={styles.Boards}>
                         {boardsList.length !== 0 && 
                             <BoardList
                                 isTodoOpen={isTodoOpen}
@@ -59,10 +59,10 @@ const Home = ({
                         />}
                     </div>
                     
-                    <div className="myboards">
-                        <h1 className="subtitle">Others Boards</h1>
+                    <div className={styles.Myboards}>
+                        <h1 className={styles.Subtitle}>Others Boards</h1>
                     </div>
-                    <div className="boards">
+                    <div className={styles.Boards}>
                         <OtherBoard title="Todo for today" />
                         <OtherBoard title="Other todo" />
                     </div>

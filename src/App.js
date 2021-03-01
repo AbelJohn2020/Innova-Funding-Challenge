@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 import TaskList from './components/TaskList/TaskList';
-import './index.css';
+import styles from './index.module.css';
 
 function App() {
   const [boardsList, setBoardsList] = useState([]);
@@ -11,7 +11,7 @@ function App() {
   const [logout, setLogout] = useState(false);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Router>
         <Switch>
           <Route exact path='/'>

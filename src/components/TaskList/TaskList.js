@@ -121,7 +121,7 @@ const TaskList = ({
                         <button className={stylesT.TodoListPlus} onClick={() => setCreateList(!createList)}>
                             <CgMathPlus className={stylesT.TodoListPlusIcon}/>
                         </button> 
-                        <div className={styles.SetTodoList}>
+                        <div className={stylesT.SetTodoList}>
                             {boardsList.length !== 0 && boardsList[selectedTodo] &&  (
                                 boardsList[selectedTodo].taskList.map(task => (
                                 <TodoList 
