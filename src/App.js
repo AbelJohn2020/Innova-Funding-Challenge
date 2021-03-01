@@ -8,6 +8,8 @@ function App() {
   const [boardsList, setBoardsList] = useState([]);
   const [isTodoOpen, setIsTodoOpen] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState(null);
+  const [logout, setLogout] = useState(false);
+  console.log('logout', logout)
 
   return (
     <div className="App">
@@ -21,6 +23,8 @@ function App() {
               setIsTodoOpen={setIsTodoOpen}
               selectedTodo={selectedTodo}
               setSelectedTodo={setSelectedTodo}
+              logout={logout}
+              setLogout={setLogout}
             />
           </Route>
           <Route exact path='/tasks/:taskId'>
@@ -30,6 +34,8 @@ function App() {
                 boardsList={boardsList} 
                 setBoardsList={setBoardsList}
                 selectedTodo={selectedTodo}
+                logout={logout}
+                setLogout={setLogout}
               />
           </Route>
         </Switch>

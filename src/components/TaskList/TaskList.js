@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { CgMathPlus } from "react-icons/cg";
 import Header from '../Header/Header';
-import '../BoardItem/boardItem.css';
-import './taskslist.css';
 import userOne from '../../images/user-one.jpg';
 import userTwo from '../../images/user-two.jpg';
 import userThree from '../../images/user-three.jpg';
@@ -12,9 +10,10 @@ import userSix from '../../images/user-six.jpg';
 import userSeven from '../../images/user-seven.jpg';
 import CreateBoard from '../CreateBoard/CreateBoard';
 import Logout from '../Logout/Logout';
+import TodoList from '../TodoList/TodoList';
 import SendInvitation from '../SendInvitation/SendInvitation';
-
-// import Form from './to-do-list/form-change-todo/Form';
+import '../BoardItem/boardItem.css';
+import './taskslist.css';
 
 const guestsList = [
     {
@@ -67,12 +66,12 @@ const TaskList = ({
     selectedTodo,
     isTodoOpen,
     setIsTodoOpen,
+    logout,
+    setLogout,
 }) => {
     const [sendInvitation, setSendInvitation] = useState(false);
     const [createList, setCreateList] = useState(false);
-    const [logout, setLogout] = useState(false) 
     const [sendTodo, setSendTodo] = useState(false);
-    console.log('boardsList', boardsList);
 
     return (
         <div>   
@@ -130,18 +129,17 @@ const TaskList = ({
                             <CgMathPlus className="todo-list__plus--icon"/>
                         </button> 
                         <div className="set-todo-list">
-                            {/* {boardsList[selectedTodo].taskList.map(task => (
+                            {boardsList.length !== 0 && boardsList[selectedTodo].taskList.map(task => (
                                 <TodoList 
                                     key={task.id} 
                                     taskName={task.name} 
                                     taskId={task.id}
                                 />
-                            ))} */}
+                            ))}
                         </div>  
                     </div>
                 </div>
-                    {logout && <Logout 
-                        logout={logout} 
+                    {logout && <Logout
                         setLogout={setLogout} 
                     />}
                 </div>

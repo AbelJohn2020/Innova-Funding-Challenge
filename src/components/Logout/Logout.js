@@ -4,15 +4,17 @@ import { FiLogOut } from "react-icons/fi";
 import './logout.css';
 
 const Logout = ({
-    logout, 
     setLogout,
 }) => {
     return (
         <div className="signout">
-            <div className="empty-space"onClick={() => setLogout(!logout)}></div>
+            <div className="empty-space" onClick={() => setLogout(false)}></div>
             <div className="footer">
-                <Link to='/'>
-                    <button className="logout--button">
+                <Link to='/' style={{textDecoration: 'none'}}>
+                    <button 
+                        className="logout--button" 
+                        onClick={() => setLogout(false)}
+                    >
                         <FiLogOut className="logout--button__icon"/>
                         <h1 className="logout--button__text">Sign out</h1>
                     </button>
