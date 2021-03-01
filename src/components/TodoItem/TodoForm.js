@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CgMathPlus } from "react-icons/cg";
-import './todoform.css';
+import './Todoform.css';
 
 const TodoForm = ({todos, onSubmit}) => {
     const [inputText, setInputText] = useState('');

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TaskItem from '../TaskItem/TaskItem';
-import './todo.css';
+import './Todo.css';
 
 const Todo = ({
     todo, 

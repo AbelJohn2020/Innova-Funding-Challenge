@@ -4,7 +4,7 @@ import CommentList from '../CommentList/CommentList';
 import userTwo from '../../images/user-two.jpg';
 import userFour from '../../images/user-four.jpg';
 import userSeven from '../../images/user-seven.jpg';
-import './taskItem.css';
+import './TaskItem.css';
 
 const getUsers = [
     {

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CreateBoard/createBoard.css';
+import '../CreateBoard/CreateBoard.css';
 
 const SendInvitation = ({
     placeholder,

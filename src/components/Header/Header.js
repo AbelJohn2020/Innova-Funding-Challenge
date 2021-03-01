@@ -1,6 +1,6 @@
 import React from 'react';
 import { CgDetailsLess } from "react-icons/cg"; 
-import './header.css';
+import './Header.css';
 import ButtonHome from '../ButtonHome/ButtonHome';
 
 const Header = ({

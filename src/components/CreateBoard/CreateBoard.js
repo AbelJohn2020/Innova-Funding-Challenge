@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './createBoard.css';
+import './CreateBoard.css';
 
 const CreateBoard = ({ 
     nameButton, 

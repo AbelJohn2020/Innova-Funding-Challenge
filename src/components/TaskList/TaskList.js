@@ -12,8 +12,8 @@ import CreateBoard from '../CreateBoard/CreateBoard';
 import Logout from '../Logout/Logout';
 import TodoList from '../TodoList/TodoList';
 import SendInvitation from '../SendInvitation/SendInvitation';
-import '../BoardItem/boardItem.css';
-import './taskslist.css';
+import '../BoardItem/BoardItem.css';
+import './Taskslist.css';
 
 const guestsList = [
     {

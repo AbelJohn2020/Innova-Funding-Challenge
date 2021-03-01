@@ -1,5 +1,5 @@
 import React from 'react';
-import './boardItem.css';
+import './BoardItem.css';
 import { useHistory } from "react-router-dom";
 import userTwo from '../../images/user-two.jpg';
 import userFour from '../../images/user-four.jpg';
@@ -32,14 +32,14 @@ const BoardItem = ({
     closeBoard,
     isTodoOpen, 
     setIsTodoOpen,
-    setSelectedTodo
+    setSelectedTodo,
     }) => {
     let history = useHistory();
+    // console.log('closeBoard', closeBoard)
+    console.log('itemId', itemId);
+    console.log('closeboard(!itemId)', closeBoard)
     return (
-        <div className="board" onClick={() => {
-            setSelectedTodo(itemId);
-            history.push(`/tasks/${itemId}`)
-        }}>
+        <div className="board">
             <div className="board--header">
                 <button 
                     className="board--header__button" 
@@ -48,7 +48,11 @@ const BoardItem = ({
                     <VscChromeClose className="board--header__button--icon"/>
                 </button>
             </div>
-            <div className="board--body" onClick={() => setIsTodoOpen(!isTodoOpen)}>
+            <div className="board--body" onClick={() => {
+            setSelectedTodo(itemId);
+            history.push(`/tasks/${itemId}`);
+            setIsTodoOpen(!isTodoOpen);
+        }}>
                 <h1 className="board__todo">Todo for today</h1>    
                 <div className="img-footer">
                     {usersList.map(user => (

@@ -1,11 +1,11 @@
 import React from 'react';
-import './commentList.css';
+import './CommentList.css';
 
 const CommentList = ({image, alt, comment}) => {
     return (
         <li className="user">
             <img className="user--photo" src={image} alt={alt}/>
-            <p className="user--coment">{comment}</p>
+            <p className="user--comment">{comment}</p>
         </li>
     )  
 }
