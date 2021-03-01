@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 import TaskList from './components/TaskList/TaskList';
-import './App.css';
+import './index.css';
 
 function App() {
   const [boardsList, setBoardsList] = useState([]);

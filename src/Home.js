@@ -2,9 +2,10 @@ import React from 'react';
 import Header from './components/Header/Header';
 import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList/BoardList';
-import './Home.css';
 import Logout from './components/Logout/Logout';
 import OtherBoard from './components/OtherBoard/OtherBoard';
+import './index.css';
+
 
 const Home = ({
     boardsList, 
