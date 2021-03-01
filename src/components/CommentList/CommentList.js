@@ -1,11 +1,11 @@
 import React from 'react';
-import './CommentList.css';
+import styles from './CommentList.module.css';
 
 const CommentList = ({image, alt, comment}) => {
     return (
-        <li className="user">
-            <img className="user--photo" src={image} alt={alt}/>
-            <p className="user--comment">{comment}</p>
+        <li className={styles.User}>
+            <img className={styles.UserPhoto} src={image} alt={alt}/>
+            <p className={styles.UserComment}>{comment}</p>
         </li>
     )  
 };

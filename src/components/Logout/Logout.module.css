@@ -1,4 +1,4 @@
-.signout {
+.Signout {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -7,28 +7,28 @@
     left: 0;
 }
 
-.empty-space-signout {
+.EmptySpaceSignout {
     background: rgba(0, 0, 0, 25%);
     width: 100%;
     min-height: 587px;
     position: absolute;
 }
 
-.footer,
-.logout--button {
+.Footer,
+.LogoutButton {
     display: flex;
 }
 
-.footer {
+.Footer {
     flex-direction: column;
 }
 
-.footer,
-.logout--button {
+.Footer,
+.LogoutButton {
     background: white; 
 }
 
-.footer {
+.Footer {
     width: 100%;
     height: 80px;
     justify-content: center;
@@ -37,7 +37,7 @@
     top: 587px;
 }
 
-.logout--button {
+.LogoutButton {
     align-items: center;
     margin: 0 0 0 16px;
     padding: 4px 8px 4px 0;
@@ -46,16 +46,16 @@
     border: none;
 }
 
-.logout--button__icon,
-.logout--button__text {
+.LogoutButtonIcon,
+.LogoutButtonText {
     color: #452cb4;
 }
 
-.logout--button__icon {
+.LogoutButtonIcon {
     font-size: 20px;
 }
 
-.logout--button__text {
+.LogoutButtonText {
     font-size: 20px;
     margin: 0 0 0 8px;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CreateBoard.css';
+import styles from './CreateBoard.module.css';
 
 const CreateBoard = ({ 
     nameButton, 
@@ -41,24 +41,24 @@ const CreateBoard = ({
     };
 
     return (
-        <div className="plus">
-            <div className={showError ? "plus-whit-error" : "plus-plus"}>
-                <form className="plus-button">
+        <div className={styles.Plus}>
+            <div className={showError ? styles.PlusWithError : styles.PlusPlus}>
+                <form className={styles.PlusButton}>
                     <input 
                         type="text"
-                        className="plus-button__input"
+                        className={styles.PlusButtonInput}
                         placeholder={placeholder}
                         value={inputValue}
                         onChange={(e) => handleChange(e)}
                     />
                 </form>
                 {showError && 
-                    <div className="box-show-error">
-                        <p className="box-show-error__message">This field cannot be empty</p> *
+                    <div className={styles.BoxShowError}>
+                        <p className={styles.BoxShowErrorMessage}>This field cannot be empty</p> *
                     </div>
                 }
                     <button
-                        className="plus-button__button" 
+                        className={styles.PlusButtonButton} 
                         onClick={() => {
                             setCreateList(!createList);
                             handleSubmit();
@@ -67,7 +67,7 @@ const CreateBoard = ({
                         {nameButton} 
                     </button>
             </div>
-            <div className="empty-space" onClick={() => setCreateList(!createList)} />
+            <div className={styles.EmptySpace} onClick={() => setCreateList(!createList)} />
         </div>
     )
 }

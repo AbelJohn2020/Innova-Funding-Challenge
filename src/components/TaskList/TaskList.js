@@ -12,51 +12,44 @@ import CreateBoard from '../CreateBoard/CreateBoard';
 import Logout from '../Logout/Logout';
 import TodoList from '../TodoList/TodoList';
 import SendInvitation from '../SendInvitation/SendInvitation';
-import '../BoardItem/BoardItem.css';
-import './Taskslist.css';
+import styles from'../BoardItem/BoardItem.module.css';
+import stylesT from './TaskList.module.css';
 
 const guestsList = [
     {
         id: 1,
         image: userOne,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
     {
         id: 2,
         image: userTwo,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
     {
         id: 3,
         image: userThree,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
     {
         id: 4,
         image: userFour,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
     {
         id: 5,
         image: userFive,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
     {
         id: 6,
         image: userSix,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
     {
         id: 7,
         image: userSeven,
-        alt: 'User profile',
-        className: 'img-footer--user border-user'
+        alt: 'User profile'
     },
 ];
 
@@ -75,29 +68,29 @@ const TaskList = ({
 
     return (
         <div>   
-            <div className="todo-lists-container">
+            <div className={stylesT.TodoListsContainer}>
                 {sendInvitation  && 
                     <SendInvitation
-                        placeholder="yefrioscar9814@gmail.com" 
-                        nameButton="Send Invitation"
-                        setSendInvitation={setSendInvitation}
-                        sendInvitation={sendInvitation}
+                    placeholder="yefrioscar9814@gmail.com" 
+                    nameButton="Send Invitation"
+                    setSendInvitation={setSendInvitation}
+                    sendInvitation={sendInvitation}
                     />}
 
                 {createList && 
                     <CreateBoard 
-                        placeholder="Type name of list..." 
-                        nameButton="Create List"
-                        boardsList={boardsList}
-                        setBoardsList={setBoardsList}
-                        sendTodo={sendTodo}
-                        setSendTodo={setSendTodo}
-                        createList={createList}
-                        setCreateList={setCreateList}
-                        selectedTodo={selectedTodo}
+                    placeholder="Type name of list..." 
+                    nameButton="Create List"
+                    boardsList={boardsList}
+                    setBoardsList={setBoardsList}
+                    sendTodo={sendTodo}
+                    setSendTodo={setSendTodo}
+                    createList={createList}
+                    setCreateList={setCreateList}
+                    selectedTodo={selectedTodo}
                     />}
                     
-                <div className="todolists">
+                <div className={stylesT.TodoLists}>
                     <Header 
                         sendInvitation={sendInvitation}
                         createList={createList}
@@ -105,30 +98,30 @@ const TaskList = ({
                         setLogout={setLogout}
                         isTodoOpen={isTodoOpen}
                         setIsTodoOpen={setIsTodoOpen}
-                    />
+                        />
                     <input 
-                        className="title-todo"
+                        className={stylesT.TitleTodo}
                         placeholder="Todo for today"
-                    />
-                    <div className="todo-invite-user">
-                        <button className="todo-invite-user__plus" onClick={() => setSendInvitation(!sendInvitation)}>
-                            <CgMathPlus className="todo-invite-user__plus--icon"/>
+                        />
+                    <div className={stylesT.TodoInviteUser}>
+                        <button className={stylesT.TodoInviteUserPlus} onClick={() => setSendInvitation(!sendInvitation)}>
+                            <CgMathPlus className={stylesT.TodoInviteUserPlusIcon}/>
                         </button>
                         {guestsList.map(guest => (
-                                <img 
-                                    key={guest.id} 
-                                    src={guest.image}
-                                    alt={guest.alt}
-                                    className={guest.className}
-                                />
-                        ))}
+                            <img 
+                            key={guest.id} 
+                            src={guest.image}
+                            alt={guest.alt}
+                            className={styles.ImgFooterUserBorderUser}
+                            />
+                            ))}
                     </div>
         
-                    <div className="todo-list">
-                        <button className="todo-list__plus" onClick={() => setCreateList(!createList)}>
-                            <CgMathPlus className="todo-list__plus--icon"/>
+                    <div className={stylesT.TodoList}>
+                        <button className={stylesT.TodoListPlus} onClick={() => setCreateList(!createList)}>
+                            <CgMathPlus className={stylesT.TodoListPlusIcon}/>
                         </button> 
-                        <div className="set-todo-list">
+                        <div className={styles.SetTodoList}>
                             {boardsList.length !== 0 && boardsList[selectedTodo] &&  (
                                 boardsList[selectedTodo].taskList.map(task => (
                                 <TodoList 

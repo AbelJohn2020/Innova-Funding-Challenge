@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CreateBoard/CreateBoard.css';
+import styles from '../CreateBoard/CreateBoard.module.css';
 
 const SendInvitation = ({
     placeholder,
@@ -8,24 +8,24 @@ const SendInvitation = ({
     setSendInvitation,
 }) => {
     return (
-        <div className="plus">
-            <div className="plus-plus">
-                <form className="plus-button">
+        <div className={styles.Plus}>
+            <div className={styles.PlusPlus}>
+                <form className={styles.PlusButton}>
                     <input 
                         type="text"
-                        className="plus-button__input"
+                        className={styles.PlusButtonInput}
                         placeholder={placeholder}
                     />
                 </form>
                     <button
-                        className="plus-button__button" 
+                        className={styles.PlusButtonButton}
                         onClick={() => setSendInvitation(!sendInvitation)}
                     >
                         {nameButton} 
                     </button>
             </div>
             <div 
-                className="empty-space" 
+                className={styles.EmptySpace} 
                 onClick={() => setSendInvitation(!sendInvitation)}
             />
         </div>

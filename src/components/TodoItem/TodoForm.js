@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CgMathPlus } from "react-icons/cg";
-import './Todoform.css';
+import styles from './Todoform.module.css';
 
 const TodoForm = ({todos, onSubmit}) => {
     const [inputText, setInputText] = useState('');
@@ -33,29 +33,29 @@ const TodoForm = ({todos, onSubmit}) => {
 
     return (
         <div>
-            {showError && <div className="box-show-error">
-                <p className="box-show-error__message">This field cannot be empty</p> *
+            {showError && <div className={styles.BoxShowError}>
+                <p className={styles.BoxShowErrorMessage}>This field cannot be empty</p> *
             </div>}
-            <form className={isDisabled ? "todo-form-plus-button" : "todo-form"}>
-                <CgMathPlus className="todo-icon" onClick={() => setIsDisabled(!isDisabled)}/>
+            <form className={isDisabled ? styles.TodoFormPlusButton : styles.TodoForm}>
+                <CgMathPlus className={styles.TodoIcon} onClick={() => setIsDisabled(!isDisabled)}/>
                 {
                     isDisabled 
                     ?   <input 
                             type="text"
                             placeholder="Add new Card"
-                            className="todo-input"
+                            className={styles.TodoInput}
                             value={inputText}
                             onChange={(e) => handleChange(e)}
                         />
                     :   <input 
                             type="text"
                             placeholder="Add new Card"
-                            className="todo-input"
+                            className={styles.TodoInput}
                             disabled
                         />
                 }
                 {isDisabled && (
-                <button className="todo-button" onClick={(e) => {handleSubmit(e)}}>Send</button>
+                <button className={styles.TodoButton} onClick={(e) => {handleSubmit(e)}}>Send</button>
                 )}
             </form>
         </div>

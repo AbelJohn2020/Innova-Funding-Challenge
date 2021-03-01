@@ -1,12 +1,12 @@
-.board,
-.board--body {
+.Board,
+.BoardBody {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-.board {
+.Board {
     width: 140px;
     height: 152px;
     padding: 8px;
@@ -16,23 +16,23 @@
     background-color: white;
 }
 
-.board--body {
+.BoardBody {
     height: 136px;
 }
 
-.boardList {
+.BoardList {
     display: flex;
 }
 
 
-.board__todo {
+.BoardTodo {
     color: #cccccc;
     font-size: 38px;
     margin: 0;
     padding: 0;
 }
 
-.img-footer {
+.ImgFooter {
     width: 100%;
     padding: 0;
     display: flex;
@@ -40,7 +40,7 @@
     align-items: center;
 }
 
-.img-footer--user {
+.ImgFooterUser {
     width: 32px;
     height: 32px;
     margin: 2px;
@@ -49,7 +49,17 @@
     background: white;
 }
 
-.board--header {
+.ImgFooterUserBorderUser {
+    width: 32px;
+    height: 32px;
+    margin: 2px;
+    padding: 0;
+    border-radius: 100px;
+    background: white;
+    border: 4px solid green;
+}
+
+.BoardHeader {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -57,7 +67,7 @@
     justify-content: flex-end;
 }
 
-.board--header__button {
+.BoardHeaderButton {
     padding: 0;
     margin: 0;
     display: flex;
@@ -68,7 +78,7 @@
     background: transparent;
 }
 
-.board--header__button--icon {
+.BoardHeaderButtonIcon {
     font-size: 12px;
     font-weight: 900;
 }

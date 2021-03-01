@@ -1,5 +1,6 @@
 import React  from 'react';
 import BoardItem from '../BoardItem/BoardItem';
+import styles from '../BoardItem/BoardItem.module.css';
 
 const BoardList = ({
     boardsList,
@@ -10,7 +11,7 @@ const BoardList = ({
     setSelectedTodo,
 }) => {
     return (
-        <div className="boardList">
+        <div className={styles.BoardList}>
             {boardsList.map( board => (
                 <BoardItem 
                     key={board.id} 

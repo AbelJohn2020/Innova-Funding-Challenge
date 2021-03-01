@@ -4,7 +4,7 @@ import CommentList from '../CommentList/CommentList';
 import userTwo from '../../images/user-two.jpg';
 import userFour from '../../images/user-four.jpg';
 import userSeven from '../../images/user-seven.jpg';
-import './TaskItem.css';
+import styles from './TaskItem.module.css';
 
 const getUsers = [
     {
@@ -60,32 +60,32 @@ const TaskItem = ({
     };
 
     return (
-        <form className="td--form">
-            <div className="td--form__icon">
-                <VscChromeClose className="close-icon" onClick={() => {setCallForm(!callForm)}}/>
+        <form className={styles.TdForm}>
+            <div className={styles.TdFormIcon}>
+                <VscChromeClose className={styles.CloseIcon} onClick={() => {setCallForm(!callForm)}}/>
             </div>
             <input
                 name='text'
                 value={taskItems.text}
-                className="td--form__input"
+                className={styles.TdFormInput}
                 placeholder="What are you looking for"
                 onChange={(e) => handleChange(e)}
             />
-            <label className="title">description</label>
+            <label className={styles.Title}>description</label>
             <textarea
                 name='description'
                 value={taskItems.description}
-                className="td--form__textarea-description"
+                className={styles.TdFormTextareaDescription}
                 placeholder="Type description here..."
                 onChange={(e) => handleChange(e)}
             />
-            <div className="td--form__words">
+            <div className={styles.TdFormWords}>
                 <p>Hom</p>
                 <p>Hacer</p>
                 <p>Nov</p>
             </div>
-            <label className="title">comments</label>
-            <ul className="td--form__users">
+            <label className={styles.Title}>comments</label>
+            <ul className={styles.TdFormUsers}>
                 {getUsers.map(user => (
                             <CommentList 
                             key={user.id}
@@ -98,7 +98,7 @@ const TaskItem = ({
             <textarea
                 name='comment'
                 value={taskItems.comment}
-                className="td--form__textarea-commit"
+                className={styles.TdFormTextareaComment}
                 placeholder="Type comment here..."
                 onChange={(e) => handleChangeComment(e)}
             />

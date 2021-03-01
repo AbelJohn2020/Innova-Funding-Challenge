@@ -1,10 +1,10 @@
-.user {
+.User {
     display: flex;
     align-items: center;
     list-style-type: none;
 }
 
-.user--photo {
+.UserPhoto {
     width: 32px;
     height: 32px;
     margin: 2px 12px 2px 2px;
@@ -13,7 +13,7 @@
     border: 4px solid #6d56d6;
 }
 
-.user--comment {
+.UserComment {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-style: normal;

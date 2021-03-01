@@ -1,4 +1,4 @@
-.td--form {
+.TdForm {
     width: 90%;
     height: 88%;
     display: flex;
@@ -12,34 +12,34 @@
     left: 10px;
 }
 
-.td--form__textarea-description,
-.td--form__textarea-commit,
-.td--form__input,
-.title,
-.td--form__words p {
+.TdFormTextareaDescription,
+.TdFormTextareaComment,
+.TdFormInput,
+.Title,
+.TdFormWords p {
     font-family: 'Roboto', sans-serif;
 }
 
-.td--form__icon {
+.TdFormIcon {
     width: 96%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.close-icon {
+.CloseIcon {
     margin: 0 0 12px 0;
     padding: 0;
     font-size: 16px;
 }
 
-.td--form__input,
-.td--form__textarea-description,
-.td--form__textarea-commit {
+.TdFormInput,
+.TdFormTextareaDescription,
+.TdFormTextareaComment {
     background: #EDEDED;
 }
 
-.td--form__input {
+.TdFormInput {
     width: 92%;
     padding: 8px;
     border-radius: 8px;
@@ -48,8 +48,8 @@
     font-size: 16px;
 }
 
-.td--form__textarea-description,
-.td--form__textarea-commit {
+.TdFormTextareaDescription,
+.TdFormTextareaComment {
     width: 91%;
     font-size: 16px;
     resize: none;
@@ -59,16 +59,16 @@
     padding: 8px 10px;
 }
 
-.td--form__textarea-description {
+.TdFormTextareaDescription {
     height: 100px;
 }
 
-.td--form__textarea-commit {
+.TdFormTextareaComment {
     height: 64px;
     margin: 0 0 16px 0;
 }
 
-.title {
+.Title {
     width: 96%;
     text-transform: capitalize;
     font-size: 20px;
@@ -78,13 +78,13 @@
     margin: 12px 0 8px 0;
 }
 
-.td--form__words {
+.TdFormWords {
     width: 96%;
     margin: 16px 0 0 0;
     display: flex;
 }
 
-.td--form__words p {
+.TdFormWords p {
     margin: 0 4px 0 0;
     background: green;
     color: white;
@@ -93,7 +93,7 @@
     font-size: 12px;
 }
 
-.td--form__users {
+.TdFormUsers {
     padding: 0;
     margin: 0 0 20px 0;
 }

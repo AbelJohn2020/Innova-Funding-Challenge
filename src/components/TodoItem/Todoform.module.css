@@ -1,4 +1,4 @@
-.box-show-error {
+.BoxShowError {
     width: 92%;
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@
     padding: 0;
 }
 
-.box-show-error__message {
+.BoxShowErrorMessage {
     color: red;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -19,7 +19,7 @@
     padding: 0; 
 }
 
-.todo-form {
+.TodoForm{
     display: flex;
     align-items: center;
     padding: 0;
@@ -27,39 +27,38 @@
     justify-content: center;
 }
 
-.todo-form-plus-button {
+.TodoFormPlusButton {
     padding: 0;
     margin: 0;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin: 12px 0 4px 0;
-
 }
 
-.todo-input {
+.TodoInput {
     width: 60%;
     padding: 2px 2px 2px 4px;
     border: none;
     outline: none;
 }
 
-.todo-input:disabled {
+.TodoInput:disabled {
     background: transparent;
     width: 60%;
     padding: 2px 2px 2px 4px;
 }
 
-.todo-icon,
-.todo-input::placeholder {
+.TodoIcon,
+.TodoInput::placeholder {
     color: #aaaaaa;
 }
 
-.todo-icon {
+.TodoIcon {
     font-size: 24px;
 }
 
-.todo-button {
+.TodoButton {
     padding: 2px;
     border: none;
     outline: none;

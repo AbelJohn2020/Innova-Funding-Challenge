@@ -1,22 +1,22 @@
 import React from 'react';
 import {Link } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
-import './Logout.css';
+import styles from './Logout.module.css';
 
 const Logout = ({
     setLogout,
 }) => {
     return (
-        <div className="signout">
-            <div className="empty-space-signout" onClick={() => setLogout(false)} />
+        <div className={styles.Signout}>
+            <div className={styles.EmptySpaceSignout} onClick={() => setLogout(false)} />
             <Link to='/' style={{textDecoration: 'none'}}>
-                <div className="footer">
+                <div className={styles.Footer}>
                     <button 
-                        className="logout--button" 
+                        className={styles.LogoutButton} 
                         onClick={() => setLogout(false)}
                     >
-                        <FiLogOut className="logout--button__icon"/>
-                        <h1 className="logout--button__text">Sign out</h1>
+                        <FiLogOut className={styles.LogoutButtonIcon}/>
+                        <h1 className={styles.LogoutButtonText}>Sign out</h1>
                     </button>
                 </div>
             </Link>

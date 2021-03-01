@@ -1,7 +1,8 @@
 import React from 'react';
 import { CgDetailsLess } from "react-icons/cg"; 
-import './Header.css';
 import ButtonHome from '../ButtonHome/ButtonHome';
+import styles from './Header.module.css';
+import stylesT from '../TaskList/TaskList.module.css'
 
 const Header = ({
     sendInvitation, 
@@ -12,11 +13,11 @@ const Header = ({
 }) => {
     return (
         <header>
-            <div className="go-home"> 
+            <div className={stylesT.GoHome}> 
                 {isTodoOpen && <ButtonHome isTodoOpen={isTodoOpen} setIsTodoOpen={setIsTodoOpen}/>} 
-                <CgDetailsLess className={(sendInvitation || createList)? "dissable-icon" : "header-icon"}/>
+                <CgDetailsLess className={(sendInvitation || createList)? styles.DisableIcon : styles.HeaderIcon}/>
             </div>
-            <button className="header--button" onClick={() => setLogout(true)}>
+            <button className={styles.HeaderButton} onClick={() => setLogout(true)}>
                 YL
             </button>
         </header>

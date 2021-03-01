@@ -1,16 +1,16 @@
-.todolists {
+.TodoLists {
     padding: 24px 16px;
     min-height: 621px;
 }
 
-.go-home {
+.GoHome {
     width: 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.button-home {
+.ButtonHomee {
     margin: 0;
     padding: 0;
     border: none;
@@ -18,12 +18,12 @@
     background: transparent;
 }
 
-.icon-home {
+.IconHome {
     font-size: 24px;
     color: white;
 }
 
-.title-todo {
+.TitleTodo {
     min-width: 320px;
     margin: 16px 0 12px 0;
     padding: 4px 0;
@@ -34,22 +34,22 @@
     background: transparent;
 }
 
-.title-todo,
-.title-todo::placeholder {
+.TitleTodo,
+.TitleTodo::placeholder {
     color: white;
 }
 
-.border-user {
+.BorderUser {
     border: 4px solid green;
 }
 
-.todo-invite-user {
+.TodoInviteUser {
     display: flex;
     align-items: center;
     margin: 0 0 20px 0;
 }
 
-.todo-invite-user__plus {
+.TodoInviteUserPlus {
     display: flex;
     padding: 8px;
     margin: 0 2px 0 0;
@@ -59,13 +59,13 @@
     outline: none;
 }
 
-.todo-invite-user__plus--icon,
-.todo-list__plus--icon {
+.TodoInviteUserPlusIcon,
+.TodoListPlusIcon {
     font-size: 24px;
     color: white;
 }
 
-.todo-list__plus {
+.TodoListPlus {
     padding: 56px 8px;
     background: #63E6C3;
     border-radius: 8px;
@@ -73,13 +73,13 @@
     outline: none;
 }
 
-.set-todo-list {
+.SetTodoList {
     min-width: 240px;
     min-height: 400px;
     display: flex;
 }
 
-.todo-list {
+.TodoList {
     display: flex;
     align-items: flex-start;
 }

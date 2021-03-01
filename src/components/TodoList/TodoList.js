@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Todo from '../TodoItem/Todo';
 import TodoForm from '../TodoItem/TodoForm';
-import './Todolist.css';
+import styles from './TodoList.module.css';
 
 const TodoList = ({taskName}) => {
     const [todos, setTodos] = useState([]);
@@ -14,9 +14,9 @@ const TodoList = ({taskName}) => {
 
     return (
         <div>
-            <div className="todo--list">
-                <h1 className="todo--list__title">{taskName}</h1>
-                <div className="todo--list__task">   
+            <div className={styles.TodoList}>
+                <h1 className={styles.TodoListTitle}>{taskName}</h1>
+                <div className={styles.TodoListTask}>   
                     {todos.length !== 0 && todos.map(todo => (
                         <Todo
                             key={todo.id}

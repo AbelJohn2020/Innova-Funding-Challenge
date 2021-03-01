@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TaskItem from '../TaskItem/TaskItem';
-import './Todo.css';
+import styles from './Todo.module.css';
 
 const Todo = ({
     todo, 
@@ -13,7 +13,7 @@ const Todo = ({
     const [callForm, setCallForm] = useState(false);
     
     return ( 
-        <div className='todo-row' onClick={() => setSelectedTask(todoId)}>
+        <div className={styles.TodoRow} onClick={() => setSelectedTask(todoId)}>
             <div key={todo.id} onClick={() => setCallForm(!callForm)}>
                 {todo.text}
             </div>
