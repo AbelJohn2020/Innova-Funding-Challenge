@@ -19,8 +19,8 @@
 }
 
 .todo--list__task {
+    min-height: 72px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-height: 72px;
 }
