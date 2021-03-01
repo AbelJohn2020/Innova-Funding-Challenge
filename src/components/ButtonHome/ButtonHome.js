@@ -12,6 +12,6 @@ const ButtonHome = ({isTodoOpen, setIsTodoOpen}) => {
             </Link>
         </div>
     )
-}
+};
 
 export default ButtonHome;

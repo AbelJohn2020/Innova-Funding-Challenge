@@ -8,6 +8,6 @@ const CommentList = ({image, alt, comment}) => {
             <p className="user--comment">{comment}</p>
         </li>
     )  
-}
+};
 
 export default CommentList;

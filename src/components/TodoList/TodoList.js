@@ -37,6 +37,6 @@ const TodoList = ({taskName}) => {
             </div>
         </div>
     )
-}
+};
 
-export default TodoList
+export default TodoList;

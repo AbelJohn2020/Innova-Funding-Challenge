@@ -1,7 +1,5 @@
 import React from 'react';
-// import Boards from './components/Boards';
 import Header from './components/Header/Header';
-// import NewBoard from './components/NewBoard';
 import { CgAdd } from "react-icons/cg";
 import BoardList from './components/BoardList/BoardList';
 import './Home.css';
@@ -18,9 +16,6 @@ const Home = ({
     logout,
     setLogout,
 }) => {
-    // const [boardsList, setBoardsList] = useState(JSON.parse(localStorage.getItem("boardsList")) || []);
-
-
     const addBoardToList = () => {
         const newBoard = [{
             id: boardsList.length,
@@ -55,7 +50,8 @@ const Home = ({
                             <BoardList
                                 isTodoOpen={isTodoOpen}
                                 setIsTodoOpen={setIsTodoOpen}
-                                boardsList={boardsList} 
+                                boardsList={boardsList}
+                                setBoardsList={setBoardsList}
                                 closeBoard={selectBoard}
                                 selectedTodo={selectedTodo}
                                 setSelectedTodo={setSelectedTodo}
@@ -74,6 +70,6 @@ const Home = ({
             </section>
         </div>
     )
-}
+};
 
-export default Home
+export default Home;

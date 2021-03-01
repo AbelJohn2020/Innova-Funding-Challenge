@@ -129,13 +129,14 @@ const TaskList = ({
                             <CgMathPlus className="todo-list__plus--icon"/>
                         </button> 
                         <div className="set-todo-list">
-                            {boardsList.length !== 0 && boardsList[selectedTodo].taskList.map(task => (
+                            {boardsList.length !== 0 && boardsList[selectedTodo] &&  (
+                                boardsList[selectedTodo].taskList.map(task => (
                                 <TodoList 
                                     key={task.id} 
                                     taskName={task.name} 
                                     taskId={task.id}
                                 />
-                            ))}
+                            )))}
                         </div>  
                     </div>
                 </div>

@@ -25,7 +25,6 @@ const usersList = [
     },
 ];
 
-
 const OtherBoard = ({title}) => {
     return (
         <div className="board">

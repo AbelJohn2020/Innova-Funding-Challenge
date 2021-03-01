@@ -6,7 +6,6 @@ const SendInvitation = ({
     nameButton,
     sendInvitation,
     setSendInvitation,
-
 }) => {
     return (
         <div className="plus">
@@ -28,9 +27,7 @@ const SendInvitation = ({
             <div 
                 className="empty-space" 
                 onClick={() => setSendInvitation(!sendInvitation)}
-            >
-
-            </div>
+            />
         </div>
     )
 }

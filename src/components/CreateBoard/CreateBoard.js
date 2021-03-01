@@ -12,9 +12,8 @@ const CreateBoard = ({
     createList, 
     setCreateList,
 }) => {
-
-    const [inputValue, setInputValue] = useState('');
     const boardListTasks = boardsList[selectedTodo];
+    const [inputValue, setInputValue] = useState('');
     const [showError, setShowError] = useState(false);
 
     const handleChange = e => {
@@ -36,8 +35,8 @@ const CreateBoard = ({
             setInputValue('');
             setSendTodo(!sendTodo);
         } else {
-            setShowError(true)
-            setCreateList(createList)
+            setShowError(true);
+            setCreateList(createList);
         }
     };
 
@@ -61,16 +60,14 @@ const CreateBoard = ({
                     <button
                         className="plus-button__button" 
                         onClick={() => {
-                            setCreateList(!createList)
-                            handleSubmit()
+                            setCreateList(!createList);
+                            handleSubmit();
                         }}
                     >
                         {nameButton} 
                     </button>
             </div>
-            <div className="empty-space" onClick={() => setCreateList(!createList)}>
-
-            </div>
+            <div className="empty-space" onClick={() => setCreateList(!createList)} />
         </div>
     )
 }

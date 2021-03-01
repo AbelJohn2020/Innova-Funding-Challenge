@@ -95,7 +95,6 @@ const TaskItem = ({
                         />
                 ))}
             </ul>
-
             <textarea
                 name='comment'
                 value={taskItems.comment}

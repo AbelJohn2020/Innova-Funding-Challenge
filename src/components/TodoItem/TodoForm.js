@@ -54,9 +54,9 @@ const TodoForm = ({todos, onSubmit}) => {
                             disabled
                         />
                 }
-                {
-                    isDisabled && <button className="todo-button" onClick={(e) => {handleSubmit(e)}}>Send</button>
-                }
+                {isDisabled && (
+                <button className="todo-button" onClick={(e) => {handleSubmit(e)}}>Send</button>
+                )}
             </form>
         </div>
     )

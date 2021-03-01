@@ -35,24 +35,23 @@ const BoardItem = ({
     setSelectedTodo,
     }) => {
     let history = useHistory();
-    // console.log('closeBoard', closeBoard)
-    console.log('itemId', itemId);
-    console.log('closeboard(!itemId)', closeBoard)
     return (
         <div className="board">
             <div className="board--header">
                 <button 
                     className="board--header__button" 
-                    onClick={() => {closeBoard(itemId)}}
-                >
+                    onClick={() => closeBoard(itemId)}>
                     <VscChromeClose className="board--header__button--icon"/>
                 </button>
             </div>
-            <div className="board--body" onClick={() => {
-            setSelectedTodo(itemId);
-            history.push(`/tasks/${itemId}`);
-            setIsTodoOpen(!isTodoOpen);
-        }}>
+            <div 
+                className="board--body" 
+                onClick={() => {
+                    setSelectedTodo(itemId);
+                    history.push(`/tasks/${itemId}`);
+                    setIsTodoOpen(!isTodoOpen);
+                }
+            }>
                 <h1 className="board__todo">Todo for today</h1>    
                 <div className="img-footer">
                     {usersList.map(user => (

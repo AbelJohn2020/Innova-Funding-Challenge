@@ -14,11 +14,11 @@ const Header = ({
         <header>
             <div className="go-home"> 
                 {isTodoOpen && <ButtonHome isTodoOpen={isTodoOpen} setIsTodoOpen={setIsTodoOpen}/>} 
-                <CgDetailsLess className={(sendInvitation || createList)? "dissable-icon" :"header-icon"}/>
+                <CgDetailsLess className={(sendInvitation || createList)? "dissable-icon" : "header-icon"}/>
             </div>
-            <button 
-                className="header--button" onClick={() => setLogout(true)}
-            >YL</button>
+            <button className="header--button" onClick={() => setLogout(true)}>
+                YL
+            </button>
         </header>
     )
 }

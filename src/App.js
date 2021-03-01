@@ -9,7 +9,6 @@ function App() {
   const [isTodoOpen, setIsTodoOpen] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [logout, setLogout] = useState(false);
-  console.log('logout', logout)
 
   return (
     <div className="App">

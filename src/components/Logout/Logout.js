@@ -8,7 +8,7 @@ const Logout = ({
 }) => {
     return (
         <div className="signout">
-            <div className="empty-space-signout" onClick={() => setLogout(false)}></div>
+            <div className="empty-space-signout" onClick={() => setLogout(false)} />
             <Link to='/' style={{textDecoration: 'none'}}>
                 <div className="footer">
                     <button 

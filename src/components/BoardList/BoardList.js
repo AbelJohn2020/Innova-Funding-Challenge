@@ -1,9 +1,9 @@
 import React  from 'react';
 import BoardItem from '../BoardItem/BoardItem';
 
-
 const BoardList = ({
     boardsList,
+    setBoardsList,
     closeBoard,
     isTodoOpen,
     setIsTodoOpen,
@@ -19,6 +19,8 @@ const BoardList = ({
                     isTodoOpen={isTodoOpen}
                     setIsTodoOpen={setIsTodoOpen}
                     setSelectedTodo={setSelectedTodo}
+                    boardsList={boardsList}
+                    setBoardsList={setBoardsList}
                 />
             ))}
         </div>

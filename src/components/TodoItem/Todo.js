@@ -18,7 +18,15 @@ const Todo = ({
                 {todo.text}
             </div>
             {
-                callForm && <TaskItem todo={todo} todos={todos} setTodos={setTodos} callForm={callForm} setCallForm={setCallForm} selectedTask={selectedTask}/>
+                callForm && 
+                    <TaskItem 
+                        todo={todo} 
+                        todos={todos} 
+                        setTodos={setTodos} 
+                        callForm={callForm} 
+                        setCallForm={setCallForm} 
+                        selectedTask={selectedTask}
+                    />
             }   
         </div>
     )
